@@ -6,18 +6,20 @@ export default function ScrollToHash() {
 
   useEffect(() => {
     const { hash } = location
+    const scrollBehavior: ScrollBehavior =
+      (location.state as { scrollBehavior?: ScrollBehavior } | null)?.scrollBehavior ?? "smooth"
 
     // Allow the new route to render before trying to scroll.
     requestAnimationFrame(() => {
       if (hash) {
         const el = document.querySelector(hash)
         if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" })
+          el.scrollIntoView({ behavior: scrollBehavior, block: "start" })
           return
         }
       }
 
-      window.scrollTo({ top: 0, behavior: "smooth" })
+      window.scrollTo({ top: 0, behavior: scrollBehavior })
     })
   }, [location])
 

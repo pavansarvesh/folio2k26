@@ -1,0 +1,37 @@
+import { Link } from "react-router-dom"
+
+type SmallAboutProps = {
+  showKnowMore?: boolean
+}
+
+const SmallAbout = ({ showKnowMore = false }: SmallAboutProps) => {
+  return (
+    <section id="about" className="relative mx-auto mt-2 flex max-w-6xl flex-col px-6 pt-16 pb-10 sm:mt-4 sm:pt-20 sm:pb-12">
+      <div className="inline-flex items-center gap-3 text-xs tracking-widest text-white/70">
+        <span className="h-[1px] w-10 bg-orange-500/60" />
+        <span>ABOUT</span>
+      </div>
+
+      <h2 className="bbh-bartle-regular mt-6 max-w-5xl text-5xl font-medium leading-[1.02] tracking-tight text-white sm:text-5xl">
+        ABOUT
+      </h2>
+
+      <p className="mt-6 max-w-2xl text-base leading-7 text-white/70 sm:text-lg">
+        I’m a computer science student passionate about Web3 and blockchain—building smart contracts, DApps, and scalable systems
+        that improve trust and transparency.
+        My toolkit includes Python, React/Next.js, Solidity, C/C++, and PostgreSQL.
+      </p>
+
+      {showKnowMore ? (
+        <Link
+          to="/about"
+          className="mt-8 inline-flex w-fit text-sm text-white/70 transition-colors duration-200 ease-out hover:text-orange-500"
+        >
+          (know more)
+        </Link>
+      ) : null}
+    </section>
+  )
+}
+
+export default SmallAbout

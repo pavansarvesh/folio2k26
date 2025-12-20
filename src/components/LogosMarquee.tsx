@@ -17,7 +17,7 @@ const LogosMarquee = () => {
 	const lap = Array.from({ length: 6 }, () => logos).flat()
 
   return (
-		<div className="marquee relative w-full pt-15">
+		<section className="marquee relative mb-12 w-full border-y border-white/10 py-12 sm:mb-16 sm:py-16">
 			<div className="marquee-track flex items-center gap-16">
 				{lap.concat(lap).map((logo, i) => (
 					<img
@@ -38,7 +38,7 @@ const LogosMarquee = () => {
 					/>
 				))}
 			</div>
-		</div>
+		</section>
   )
 }
 

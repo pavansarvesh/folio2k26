@@ -22,8 +22,8 @@ const Hero = () => {
 					</h1>
 
 					<p className="mt-6 max-w-2xl text-base leading-7 text-white/70 sm:text-lg">
-						Student developer building modern React + TypeScript projects with a focus on clean UI and solid fundamentals.
-						Explore my work, read my notes, or get in touch.
+						Computer science student at Amrita Vishwa Vidyapeetham, Bangalore — building smart contracts, DApps, and modern frontends.
+						I care about trust-minimized systems, clean UX, and shipping end-to-end.
 					</p>
 				</div>
 

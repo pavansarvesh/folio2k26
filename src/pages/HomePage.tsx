@@ -1,8 +1,9 @@
 import Hero from '../components/Hero'
-import About from '../components/About'
+import About from '../components/SmallAbout'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import LogosMarquee from '../components/LogosMarquee'
+import CodingStats from '../components/CodingStats'
 
 const HomePage = () => {
   return (
@@ -10,7 +11,8 @@ const HomePage = () => {
       <Navbar />
       <Hero />
       <LogosMarquee />
-      <About />
+      <About showKnowMore/>
+      <CodingStats />
       <Footer />
     </div>
   )
