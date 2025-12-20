@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+:root {
+  font-family: "Roboto Mono", monospace;
+  @apply bg-neutral-950 text-white;
+}
+
+body {
+  font-family: inherit;
+}
