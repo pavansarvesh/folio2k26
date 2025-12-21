@@ -17,8 +17,7 @@ export default function CodingStats() {
   const [stats, setStats] = useState<WakaTimeResponse | null>(null)
 
   useEffect(() => {
-    const apiBase = import.meta.env.DEV ? "http://localhost:3001" : ""
-    fetch(`${apiBase}/api/wakatime`)
+    fetch(`/api/wakatime`)
       .then((res) => res.json())
       .then(setStats)
       .catch(console.error)
