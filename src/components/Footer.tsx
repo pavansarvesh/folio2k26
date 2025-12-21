@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap items-center gap-6">
-          <Link to="/#about" className="text-white/70 hover:text-orange-500 hover:underline underline-offset-4">
+          <Link to="/about" className="text-white/70 hover:text-orange-500 hover:underline underline-offset-4">
             About
           </Link>
           <Link to="/projects" className="text-white/70 hover:text-orange-500 hover:underline underline-offset-4">

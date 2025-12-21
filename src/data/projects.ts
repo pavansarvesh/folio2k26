@@ -14,6 +14,17 @@ export type Project = {
 
 export const projects: Project[] = [
 	{
+		slug: "folio2k26",
+		title: "Folio 2k26",
+		tagline: "My Personal Site",
+		description: "",
+		tech: ["Vite", "Figma", "Git", "Vercel"],
+		links: {
+			demo: "/",
+		},
+		featured: true,
+	},
+	{
 		slug: "bi0sdev-site",
 		title: "Bi0sDEV Site",
 		tagline: "Secure Development • Innovation • Excellence",

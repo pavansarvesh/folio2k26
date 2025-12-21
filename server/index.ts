@@ -9,10 +9,10 @@ app.use(cors());
 
 app.get("/api/wakatime", async (_req, res) => {
 	try {
-		const apiKey = process.env.VITE_WAKATIME_API_KEY;
+		const apiKey = process.env.WAKATIME_API_KEY;
 
 		if (!apiKey) {
-			return res.status(500).json({ error: "Missing VITE_WAKATIME_API_KEY" });
+			return res.status(500).json({ error: "Missing WAKATIME_API_KEY" });
 		}
 
 		const response = await fetch(
