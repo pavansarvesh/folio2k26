@@ -1,12 +1,12 @@
-export default async function handler(req: Request): Promise<Response> {
-	try {
-		void req;
+export const runtime = "nodejs";
 
+export default async function handler(): Promise<Response> {
+	try {
 		const apiKey = process.env.WAKATIME_API_KEY;
 
 		if (!apiKey) {
-			return new Response(
-				JSON.stringify({ error: "Missing WAKATIME_API_KEY" }),
+			return Response.json(
+				{ error: "Missing WAKATIME_API_KEY" },
 				{ status: 500 }
 			);
 		}
@@ -22,15 +22,10 @@ export default async function handler(req: Request): Promise<Response> {
 
 		const data = await response.json();
 
-		return new Response(JSON.stringify(data), {
+		return Response.json(data, {
 			status: response.ok ? 200 : response.status,
-			headers: {
-				"Content-Type": "application/json",
-			},
 		});
-	} catch {
-		return new Response(JSON.stringify({ error: "Server Error" }), {
-			status: 500,
-		});
+	} catch  {
+		return Response.json({ error: "Server Error" }, { status: 500 });
 	}
 }
