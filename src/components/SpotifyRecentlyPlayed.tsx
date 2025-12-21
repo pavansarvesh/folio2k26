@@ -15,7 +15,8 @@ export default function SpotifyRecentlyPlayed() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/spotify")
+    const apiBase = import.meta.env.DEV ? "http://localhost:3001" : ""
+    fetch(`${apiBase}/api/spotify`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed");
         return res.json();
