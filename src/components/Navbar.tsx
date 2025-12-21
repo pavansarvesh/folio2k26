@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-neutral-950/70 backdrop-blur">
-      <div className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-4 text-sm">
+      <div className="relative mx-auto flex  items-center justify-between px-20 py-4 text-sm">
         <a href="/">
     <h1 className="bbh-bartle-regular max-w-5xl text-5xl font-medium leading-[1.02] tracking-tight text-white transition-colors duration-200 ease-out sm:text-xl hover:text-orange-500">
 						PS

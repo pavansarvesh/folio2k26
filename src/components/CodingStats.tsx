@@ -27,7 +27,7 @@ export default function CodingStats() {
   const languages = stats?.data.languages ?? []
 
   return (
-    <section className="relative mx-auto max-w-6xl px-6 pt-8 pb-16 sm:pt-10 sm:pb-20">
+    <div>
       <div className="flex items-baseline justify-between gap-6">
         <div className="inline-flex items-center gap-3 text-xs tracking-widest text-white/70">
           <span className="h-[1px] w-10 bg-orange-500/60" />
@@ -37,15 +37,15 @@ export default function CodingStats() {
         <span className="text-xs text-white/50">by WakaTime</span>
       </div>
 
-      <div className="mt-6 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
-        <h3 className="text-base font-medium text-white/90">Top languages from the last 7 days</h3>
+      <div className="mt-4 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+        <h4 className="bbh-bartle-regular text-sm font-medium text-white/90">Top languages</h4>
 
         <span className="text-xs text-white/50">
           {human_readable_total ? `Total: ${human_readable_total}` : "Loading…"}
         </span>
       </div>
 
-      <ol className="mt-6 divide-y divide-white/10">
+      <ol className="mt-4 divide-y divide-white/10">
         {languages.slice(0, 5).map((lang, idx) => {
           const percent = Number.isFinite(lang.percent) ? lang.percent : 0
           const isTop = idx === 0
@@ -63,6 +63,6 @@ export default function CodingStats() {
           )
         })}
       </ol>
-    </section>
+    </div>
   )
 }

@@ -25,7 +25,7 @@ export default function NotFoundPage() {
         </h1>
 
         <p className="mt-6 max-w-2xl text-base leading-7 text-white/70 sm:text-lg">
-          The page you’re looking for doesn’t exist (or the link is wrong).
+          The page you’re looking for doesn’t exist or the link is wrong or I am still working on it.
         </p>
 
         <div className="mt-10 flex items-center gap-3">

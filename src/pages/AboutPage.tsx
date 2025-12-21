@@ -29,8 +29,9 @@ const AboutPage = () => {
 
         <p className="mt-6 max-w-3xl text-base leading-7 text-white/70 sm:text-lg">
           I’m a computer science student at Amrita Vishwa Vidyapeetham, Bangalore, focused on building decentralized solutions
-          that redefine trust and transparency. I enjoy working across the stack—from smart contracts and protocol tooling to
-          clean, modern UIs.
+          that redefine trust and transparency. My core focus is backend and smart contract development—designing
+          reliable APIs, clean data models, and secure on-chain logic. I also enjoy building polished frontends when it helps
+          ship a complete product.
         </p>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr,320px]">

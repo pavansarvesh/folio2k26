@@ -21,9 +21,8 @@ const Hero = () => {
 						Pavan Sarvesh
 					</h1>
 
-					<p className="mt-6 max-w-2xl text-base leading-7 text-white/70 sm:text-lg">
-						Computer science student at Amrita Vishwa Vidyapeetham, Bangalore — building smart contracts, DApps, and modern frontends.
-						I care about trust-minimized systems, clean UX, and shipping end-to-end.
+					<p className="mt-6 max-w-3xl text-base leading-7 text-white/70 sm:text-lg">
+						Undergrad @Amrita Vishwa Vidyapeetham Bangalore / Member @Team bi0sblr
 					</p>
 				</div>
 
