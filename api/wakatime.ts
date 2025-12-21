@@ -15,7 +15,8 @@ export default async function handler(): Promise<Response> {
 			"https://wakatime.com/api/v1/users/current/stats/last_7_days",
 			{
 				headers: {
-					Authorization: "Basic " + Buffer.from(apiKey).toString("base64"),
+					Authorization:
+						"Basic " + Buffer.from(`${apiKey}:`).toString("base64"),
 				},
 			}
 		);
@@ -25,7 +26,7 @@ export default async function handler(): Promise<Response> {
 		return Response.json(data, {
 			status: response.ok ? 200 : response.status,
 		});
-	} catch  {
+	} catch {
 		return Response.json({ error: "Server Error" }, { status: 500 });
 	}
 }
