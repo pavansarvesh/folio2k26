@@ -8,6 +8,11 @@ type Track = {
   url: string;
 };
 
+type SpotifyApiError = {
+  error: string;
+  details?: string;
+};
+
 const SPOTIFY_PROFILE_URL = "https://open.spotify.com/user/31gei7c57di3xjoy7zqzgqx6bnpy?si=3bf3390242af48ca";
 
 export default function SpotifyRecentlyPlayed() {
@@ -15,13 +20,18 @@ export default function SpotifyRecentlyPlayed() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const apiBase = import.meta.env.DEV ? "http://localhost:3001" : ""
-    fetch(`${apiBase}/api/spotify`)
+    fetch("/api/spotify")
       .then((res) => {
         if (!res.ok) throw new Error("Failed");
         return res.json();
       })
-      .then(setTrack)
+      .then((data: Track | SpotifyApiError) => {
+        if (data && typeof data === "object" && "error" in data) {
+          setError(true);
+          return;
+        }
+        setTrack(data as Track);
+      })
       .catch(() => setError(true));
   }, []);
 

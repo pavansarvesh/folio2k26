@@ -43,6 +43,8 @@ type SpotifyRecentlyPlayedResponse = {
 	}>;
 };
 
+export const runtime = "nodejs";
+
 export default async function handler(): Promise<Response> {
 	try {
 		const spotify_clientID = process.env.SPOTIFY_CLIENT_ID;
@@ -55,7 +57,7 @@ export default async function handler(): Promise<Response> {
 				{
 					status: 500,
 					headers: {
-						"Content-type": "application/json",
+						"Content-Type": "application/json",
 					},
 				}
 			);
@@ -73,7 +75,7 @@ export default async function handler(): Promise<Response> {
 			},
 			body: new URLSearchParams({
 				grant_type: "refresh_token",
-				refresh_token: spotify_refreshToken!,
+				refresh_token: spotify_refreshToken,
 			}),
 		});
 
