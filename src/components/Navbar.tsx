@@ -26,12 +26,13 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            to="/#resume"
+          <a
+            href="/PavanResume.pdf"
+            download
             className="hidden rounded-full bg-white/10 px-4 py-2 text-xs font-medium text-white hover:bg-white/15 sm:inline-flex"
           >
             DOWNLOAD RESUME
-          </Link>
+          </a>
           <Link
             to="/connect"
             className="rounded-full bg-white px-4 py-2 text-xs font-medium text-neutral-900 hover:bg-white/90"

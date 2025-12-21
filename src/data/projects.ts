@@ -25,6 +25,17 @@ export const projects: Project[] = [
 		featured: true,
 	},
 	{
+		slug: "learnify",
+		title: "Learnify",
+		tagline: "A Learning Platform",
+		description: "A Learning Platform",
+		tech: ["Vite", "Figma", "Git", "Vercel"],
+		links: {
+			demo: "https://chatnlearn.vercel.app/",
+		},
+		featured: true,
+	},
+	{
 		slug: "bi0sdev-site",
 		title: "Bi0sDEV Site",
 		tagline: "Secure Development • Innovation • Excellence",
