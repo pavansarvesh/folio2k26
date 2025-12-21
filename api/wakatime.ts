@@ -1,14 +1,14 @@
-export const runtime = "nodejs";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-export default async function handler(): Promise<Response> {
+export default async function handler(
+	_req: VercelRequest,
+	res: VercelResponse
+) {
 	try {
 		const apiKey = process.env.WAKATIME_API_KEY;
 
 		if (!apiKey) {
-			return Response.json(
-				{ error: "Missing WAKATIME_API_KEY" },
-				{ status: 500 }
-			);
+			return res.status(500).json({ error: "Missing WAKATIME_API_KEY" });
 		}
 
 		const response = await fetch(
@@ -22,11 +22,8 @@ export default async function handler(): Promise<Response> {
 		);
 
 		const data = await response.json();
-
-		return Response.json(data, {
-			status: response.ok ? 200 : response.status,
-		});
+		return res.status(response.ok ? 200 : response.status).json(data);
 	} catch {
-		return Response.json({ error: "Server Error" }, { status: 500 });
+		return res.status(500).json({ error: "Server Error" });
 	}
 }

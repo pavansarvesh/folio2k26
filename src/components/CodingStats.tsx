@@ -15,16 +15,27 @@ type WakaTimeResponse = {
 
 export default function CodingStats() {
   const [stats, setStats] = useState<WakaTimeResponse | null>(null)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     fetch(`/api/wakatime`)
-      .then((res) => res.json())
-      .then(setStats)
-      .catch(console.error)
+      .then(async (res) => {
+        const data = await res.json().catch(() => null)
+        if (!res.ok || !data || typeof data !== "object" || !("data" in data)) {
+          setError(true)
+          return
+        }
+        setStats(data as WakaTimeResponse)
+      })
+      .catch(() => setError(true))
   }, [])
 
   const human_readable_total = stats?.data.human_readable_total
   const languages = stats?.data.languages ?? []
+
+  if (error) {
+    return <p className="text-sm text-white/50">WakaTime unavailable.</p>
+  }
 
   return (
     <div>
