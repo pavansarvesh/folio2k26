@@ -10,7 +10,7 @@ export default function ProjectsPage() {
       <main className="relative">
             <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
               <div className="inline-flex items-center gap-3 text-xs tracking-widest text-white/70">
-                <span className="h-[1px] w-10 bg-orange-500/60" />
+                <span className="h-px w-10 bg-orange-500/60" />
                 <span>PROJECTS</span>
               </div>
 

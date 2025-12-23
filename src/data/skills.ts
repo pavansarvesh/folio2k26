@@ -8,7 +8,6 @@ const SKILLS: skill[] = [
 		category: "Frontend Development",
 		items: [
 			"NextJS",
-			"ReactJS",
 			"Vite",
 			"Astro",
 			"JavaScript (ES6+)",
@@ -23,7 +22,7 @@ const SKILLS: skill[] = [
 		items: ["Solidity ", "viem", "Foundry", "Hardhat"],
 	},
 	{ category: "UX Design", items: ["Wireframe", "Prototyping", "Mockups"] },
-	{ category: "Backend & Databases", items: ["PostgreSQL", "Prisma"] },
+	{ category: "Backend & Databases", items: ["Node.js","PostgreSQL", "Prisma"] },
 	{ category: "Design Tools", items: ["Figma", "Adobe Photoshop"] },
 	{ category: "Tools", items: ["Git", "GitHub", "Vercel", "npm/yarn"] },
 	{

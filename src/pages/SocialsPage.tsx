@@ -7,10 +7,22 @@ const SOCIAL = {
   linkedin: "https://www.linkedin.com/in/pavansarvesh/",
   // Optional: add your invite/profile URL to show Discord.
   discord: "pavansarveshr",
+  x: "https://x.com/pavansarveshr",
 }
 
 type IconProps = {
   className?: string
+}
+
+function XIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+      <path
+        fill="currentColor"
+        d="M18.244 2H21l-6.02 6.882L22.5 22h-6.17l-4.83-7.1L5.29 22H2.5l6.44-7.36L1.5 2h6.33l4.37 6.33L18.244 2Zm-1.08 18.16h1.53L7.02 3.74H5.38l11.784 16.42Z"
+      />
+    </svg>
+  )
 }
 
 function GithubIcon({ className }: IconProps) {
@@ -90,6 +102,7 @@ export default function SocialsPage() {
 
   const links: Array<{ label: string; href: string; icon: React.ReactNode }> = [
     { label: "GitHub", href: SOCIAL.github, icon: <GithubIcon className="h-5 w-5" /> },
+    { label: "X", href: SOCIAL.x, icon: <XIcon className="h-5 w-5" /> },
     { label: "LinkedIn", href: SOCIAL.linkedin, icon: <LinkedInIcon className="h-6 w-6" /> },
     { label: "Gmail", href: mailtoHref, icon: <GmailIcon className="h-6 w-6" /> },
     { label: "Discord", href: SOCIAL.discord, icon: <DiscordIcon className="h-5 w-5" /> },

@@ -54,10 +54,10 @@ export default function SpotifyRecentlyPlayed() {
           />
 
           <div className="min-w-0">
-            <p className="bbh-bartle-regular truncate text-2xl font-semibold leading-tight text-white">
+            <p className="bbh-bartle-regular truncate text-xl font-semibold leading-tight text-white">
               {track.name}
             </p>
-            <p className="mt-2 truncate text-sm text-neutral-300">{track.artists.join(", ")}</p>
+            <p className="mt-2 truncate text-sm text-neutral-300">{track.artists.slice(0,2).join(", ")}</p>
             <p className="truncate text-sm text-neutral-500">Album · {track.album}</p>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function SpotifyRecentlyPlayed() {
             className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-neutral-700 bg-neutral-900/40 px-3 py-2 text-xs font-semibold text-neutral-200 transition hover:bg-neutral-800/60 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
             aria-label={`Open ${track.name} on Spotify`}
           >
-            <img src="/logo/Spotify.png" alt="Spotify" className="h-4 w-4" />
+            <img src="/marqueeLogo/spotify.png" alt="Spotify" className="h-4 w-4" />
             Open On Spotify
           </a>
 
@@ -84,8 +84,8 @@ export default function SpotifyRecentlyPlayed() {
               className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-neutral-700 bg-neutral-900/40 px-3 py-2 text-xs font-semibold text-neutral-200 transition hover:bg-neutral-800/60 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
               aria-label="Follow me on Spotify"
             >
-              <img src="/logo/Spotify.png" alt="Spotify" className="h-4 w-4" />
-              Follow me
+              <img src="/marqueeLogo/spotify.png" alt="Spotify" className="h-4 w-4" />
+              Follow Me
             </a>
           ) : null}
         </div>

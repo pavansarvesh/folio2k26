@@ -41,7 +41,7 @@ export default function CodingStats() {
     <div>
       <div className="flex items-baseline justify-between gap-6">
         <div className="inline-flex items-center gap-3 text-xs tracking-widest text-white/70">
-          <span className="h-[1px] w-10 bg-orange-500/60" />
+          <span className="h-px w-10 bg-orange-500/60" />
           <span>(CODING STATS)</span>
         </div>
 
@@ -77,3 +77,4 @@ export default function CodingStats() {
     </div>
   )
 }
+//rpo.cbemea.gov.in

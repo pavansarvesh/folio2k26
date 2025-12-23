@@ -1,16 +1,16 @@
 const LogosMarquee = () => {
 	const logos = [
-  "/logo/javascript.svg",
-  "/logo/ts.png",
-  "/logo/nodejs.svg",
-  "/logo/prisma.svg",
-  "/logo/reactjs.svg",
-  "/logo/solidity.svg",
-  "/logo/figma.svg",
-  "/logo/python.svg",
-  "/logo/foundry.png",
-  "/logo/rust.svg",
-  "/logo/postgresql.svg",
+  "/marqueeLogo/javascript.svg",
+  "/marqueeLogo/ts.png",
+  "/marqueeLogo/nodejs.svg",
+  "/marqueeLogo/prisma.svg",
+  "/marqueeLogo/reactjs.svg",
+  "/marqueeLogo/solidity.svg",
+  "/marqueeLogo/figma.svg",
+  "/marqueeLogo/python.svg",
+  "/marqueeLogo/foundry.png",
+  "/marqueeLogo/rust.svg",
+  "/marqueeLogo/postgresql.svg",
 ]
 
 	// Make one full "lap" long enough to avoid empty space on wide screens.

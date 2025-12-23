@@ -1,9 +1,9 @@
 const sections = [
     { id: "introduction", label: "Introduction" },
-    // { id: "certifications", label: "Certifications" },
     { id: "education", label: "Education" },
     { id: "experience", label: "Experience" },
     { id: "skills", label: "Skills" },
+    { id: "toolkit", label: "Toolkit" },
 ]
 
 export default function TableOfContents() {

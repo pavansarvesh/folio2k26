@@ -1,9 +1,10 @@
+import SKILLS from "../data/skills";
+import { tools } from "../data/tools";
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import { education } from "../data/education";
 import { experiences } from "../data/experience";
 import TableOfContents from "../components/TableOfContents";
-import SKILLS from "../data/skills";
 
 
 
@@ -25,6 +26,8 @@ import SKILLS from "../data/skills";
 // ]
 
 const AboutPage = () => {
+  const toolGroups = Array.from(new Map(tools.map((group) => [group.id, group])).values())
+
   const renderTextWithLinks = (text: string) => {
     const parts = text.split(/(https?:\/\/\S+)/g)
     return parts.map((part, index) => {
@@ -107,48 +110,6 @@ const AboutPage = () => {
               </p>
             </section>
 
-            {/* <section className="mt-12" id="certifications">
-              <h2 className="text-sm font-medium tracking-widest text-orange-500/80">CERTIFICATIONS</h2>
-              <div className="mt-4 grid gap-3">
-                {CERTIFICATIONS.map((cert) => (
-                  <div
-                    key={`${cert.title}-${cert.date}`}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-5"
-                  >
-                    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                      <div className="min-w-0">
-                        <div className="truncate text-base font-semibold text-white">
-                          {cert.title}
-                        </div>
-                        {cert.meta ? (
-                          <div className="mt-1 text-xs text-white/60">{cert.meta}</div>
-                        ) : null}
-                      </div>
-
-                      <div className="flex items-center gap-3 text-xs text-white/60">
-                        <span>{cert.date}</span>
-                        <span className="text-white/30" aria-hidden="true">
-                          |
-                        </span>
-                        {cert.href ? (
-                          <a
-                            href={cert.href}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="underline-offset-4 hover:text-orange-500 hover:underline"
-                          >
-                            View Certificate
-                          </a>
-                        ) : (
-                          <span className="text-white/40">View Certificate</span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section> */}
-
             <section className="mt-12" id="education">
               <h2 className="text-sm font-medium tracking-widest text-orange-500/80">EDUCATION</h2>
               <div className="mt-4 grid gap-4">
@@ -222,6 +183,55 @@ const AboutPage = () => {
                           <span key={item} className="rounded bg-white/5 px-2 py-1">
                             {item}
                           </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+            <section className="mt-12" id="toolkit">
+              <h2 className="text-sm font-medium tracking-widest text-orange-500/80">MY TOOlKIT</h2>
+
+              <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div className="grid gap-5">
+                  {toolGroups.map((group) => (
+                    <div
+                      key={group.id}
+                      className="rounded-2xl border border-white/10 bg-neutral-950/20 p-5"
+                    >
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="text-base font-semibold text-white">{group.category}</div>
+                        <div className="h-px flex-1 bg-white/10" aria-hidden="true" />
+                      </div>
+
+                      <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                        {group.tool.map((tool) => (
+                          <a
+                            key={tool.id}
+                            href={tool.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="group flex items-center gap-4 rounded-xl border border-transparent bg-neutral-950/30 p-4 transition duration-200 hover:-translate-y-0.5 hover:border-orange-500/30 hover:bg-white/6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/30"
+                          >
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-neutral-950/40 ring-1 ring-white/10 transition group-hover:ring-orange-500/30">
+                              <img
+                                src={tool.iconPath}
+                                alt={tool.name}
+                                className="h-7 w-7 object-contain"
+                                loading="lazy"
+                              />
+                            </div>
+
+                            <div className="min-w-0">
+                              <div className="truncate text-sm font-semibold text-white transition group-hover:text-orange-500/90">
+                                {tool.name}
+                              </div>
+                              <div className="mt-0.5 truncate text-sm text-white/60 transition group-hover:text-orange-500/80">
+                                {tool.description}
+                              </div>
+                            </div>
+                          </a>
                         ))}
                       </div>
                     </div>
