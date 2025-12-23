@@ -25,8 +25,8 @@ export default function Footer() {
           <Link to="/projects" className="text-white/70 hover:text-orange-500 hover:underline underline-offset-4">
             Projects
           </Link>
-          <Link to="/connect" className="text-white/70 hover:text-orange-500 hover:underline underline-offset-4">
-            Connect
+          <Link to="/socials" className="text-white/70 hover:text-orange-500 hover:underline underline-offset-4">
+            Socials
           </Link>
           <a href="#top" className="text-white/70 hover:text-orange-500 hover:underline underline-offset-4">
             Back to top

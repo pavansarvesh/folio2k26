@@ -34,10 +34,10 @@ const Navbar = () => {
             DOWNLOAD RESUME
           </a>
           <Link
-            to="/connect"
+            to="/socials"
             className="rounded-full bg-white px-4 py-2 text-xs font-medium text-neutral-900 hover:bg-white/90"
           >
-            CONNECT WITH ME
+            SOCIALS
           </Link>
         </div>
       </div>
