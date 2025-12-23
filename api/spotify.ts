@@ -50,11 +50,19 @@ export default async function handler(
 	res: VercelResponse
 ) {
 	try {
+		// Allow Vercel/CDN caching to reduce upstream Spotify calls.
+		// Keep it short since "recently played" changes frequently.
+		res.setHeader(
+			"Cache-Control",
+			"public, s-maxage=60, stale-while-revalidate=300"
+		);
+
 		const spotify_clientID = process.env.SPOTIFY_CLIENT_ID;
 		const spotify_clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 		const spotify_refreshToken = process.env.SPOTIFY_REFRESH_TOKEN;
 
 		if (!spotify_clientID || !spotify_clientSecret || !spotify_refreshToken) {
+			res.setHeader("Cache-Control", "no-store");
 			return res
 				.status(500)
 				.json({ error: "Missing Spotify environment variables" });
@@ -77,6 +85,7 @@ export default async function handler(
 		});
 
 		if (!tokenRes.ok) {
+			res.setHeader("Cache-Control", "no-store");
 			const err = await tokenRes.text();
 			return res.status(500).json({
 				error: "Token refresh failed",
@@ -97,6 +106,7 @@ export default async function handler(
 		);
 
 		if (!recentRes.ok) {
+			res.setHeader("Cache-Control", "no-store");
 			const err = await recentRes.text();
 			return res.status(500).json({
 				error: "Spotify API failed",
@@ -120,6 +130,7 @@ export default async function handler(
 		};
 		return res.status(200).json(payload);
 	} catch {
+		res.setHeader("Cache-Control", "no-store");
 		return res.status(500).json({ error: "Server Error" });
 	}
 }

@@ -25,6 +25,9 @@ const LogosMarquee = () => {
 						src={logo}
 						alt=""
 						className="h-14 w-auto shrink-0 object-contain opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+						loading={i < 10 ? "eager" : "lazy"}
+						decoding="async"
+						fetchPriority="low"
 					/>
 				))}
 			</div>
@@ -35,6 +38,9 @@ const LogosMarquee = () => {
 						src={logo}
 						alt=""
 						className="h-14 w-auto shrink-0 object-contain opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+						loading={i < 10 ? "eager" : "lazy"}
+						decoding="async"
+						fetchPriority="low"
 					/>
 				))}
 			</div>

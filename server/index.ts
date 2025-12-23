@@ -9,9 +9,12 @@ app.use(cors());
 
 app.get("/api/wakatime", async (_req, res) => {
 	try {
+		res.setHeader("Cache-Control", "public, max-age=60");
+
 		const wakatime_apiKey = process.env.WAKATIME_API_KEY;
 
 		if (!wakatime_apiKey) {
+			res.setHeader("Cache-Control", "no-store");
 			return res.status(500).json({ error: "Missing WAKATIME_API_KEY" });
 		}
 
@@ -26,19 +29,26 @@ app.get("/api/wakatime", async (_req, res) => {
 		);
 
 		const data = await response.json();
+		if (!response.ok) {
+			res.setHeader("Cache-Control", "no-store");
+		}
 		return res.status(response.ok ? 200 : response.status).json(data);
 	} catch {
+		res.setHeader("Cache-Control", "no-store");
 		res.status(500).json({ error: "Server Error" });
 	}
 });
 
 app.get("/api/spotify", async (_req, res) => {
 	try {
+		res.setHeader("Cache-Control", "public, max-age=30");
+
 		const spotify_clientID = process.env.SPOTIFY_CLIENT_ID;
 		const spotify_clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 		const spotify_refreshToken = process.env.SPOTIFY_REFRESH_TOKEN;
 
 		if (!spotify_clientID || !spotify_clientSecret || !spotify_refreshToken) {
+			res.setHeader("Cache-Control", "no-store");
 			return res
 				.status(500)
 				.json({ error: "Missing Spotify environment variables" });
@@ -61,6 +71,7 @@ app.get("/api/spotify", async (_req, res) => {
 		});
 
 		if (!tokenRes.ok) {
+			res.setHeader("Cache-Control", "no-store");
 			const err = await tokenRes.text();
 			return res.status(500).json({
 				error: "Token refresh failed",
@@ -81,6 +92,7 @@ app.get("/api/spotify", async (_req, res) => {
 		);
 
 		if (!recentRes.ok) {
+			res.setHeader("Cache-Control", "no-store");
 			const err = await recentRes.text();
 			return res.status(500).json({
 				error: "Spotify API failed",
@@ -105,6 +117,7 @@ app.get("/api/spotify", async (_req, res) => {
 			url: track.external_urls.spotify,
 		});
 	} catch {
+		res.setHeader("Cache-Control", "no-store");
 		res.status(500).json({ error: "Server Error" });
 	}
 });

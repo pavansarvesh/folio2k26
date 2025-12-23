@@ -15,24 +15,47 @@ type SpotifyApiError = {
 
 const SPOTIFY_PROFILE_URL = "https://open.spotify.com/user/31gei7c57di3xjoy7zqzgqx6bnpy?si=3bf3390242af48ca";
 
+type CachedSpotify = {
+  value: Track | null
+  expiresAt: number
+}
+
+let spotifyCache: CachedSpotify | null = null
+
 export default function SpotifyRecentlyPlayed() {
-  const [track, setTrack] = useState<Track | null>(null);
+  const [track, setTrack] = useState<Track | null>(() => {
+    const now = Date.now()
+    if (spotifyCache && spotifyCache.expiresAt > now) return spotifyCache.value
+    return null
+  });
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch("/api/spotify")
+    const now = Date.now()
+    if (spotifyCache && spotifyCache.expiresAt > now) return
+
+    const controller = new AbortController()
+
+    fetch("/api/spotify", { signal: controller.signal })
       .then((res) => {
-        if (!res.ok) throw new Error("Failed");
-        return res.json();
+        if (!res.ok) throw new Error("Failed")
+        return res.json()
       })
       .then((data: Track | SpotifyApiError) => {
         if (data && typeof data === "object" && "error" in data) {
-          setError(true);
-          return;
+          setError(true)
+          return
         }
-        setTrack(data as Track);
+        const value = data as Track
+        spotifyCache = { value, expiresAt: Date.now() + 60_000 }
+        setTrack(value)
       })
-      .catch(() => setError(true));
+      .catch((err) => {
+        if (err?.name === "AbortError") return
+        setError(true)
+      })
+
+    return () => controller.abort()
   }, []);
 
   if (error) {
@@ -51,6 +74,8 @@ export default function SpotifyRecentlyPlayed() {
             src={track.image}
             alt={track.name}
             className="h-28 w-28 shrink-0 rounded-xl border border-white/10 object-cover"
+            loading="lazy"
+            decoding="async"
           />
 
           <div className="min-w-0">

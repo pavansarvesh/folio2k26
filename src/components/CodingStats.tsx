@@ -13,21 +13,44 @@ type WakaTimeResponse = {
   }
 }
 
+type CachedWakaTime = {
+  value: WakaTimeResponse | null
+  expiresAt: number
+}
+
+let wakatimeCache: CachedWakaTime | null = null
+
 export default function CodingStats() {
-  const [stats, setStats] = useState<WakaTimeResponse | null>(null)
+  const [stats, setStats] = useState<WakaTimeResponse | null>(() => {
+    const now = Date.now()
+    if (wakatimeCache && wakatimeCache.expiresAt > now) return wakatimeCache.value
+    return null
+  })
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    fetch(`/api/wakatime`)
+    const now = Date.now()
+    if (wakatimeCache && wakatimeCache.expiresAt > now) return
+
+    const controller = new AbortController()
+
+    fetch(`/api/wakatime`, { signal: controller.signal })
       .then(async (res) => {
         const data = await res.json().catch(() => null)
         if (!res.ok || !data || typeof data !== "object" || !("data" in data)) {
           setError(true)
           return
         }
-        setStats(data as WakaTimeResponse)
+        const value = data as WakaTimeResponse
+        wakatimeCache = { value, expiresAt: Date.now() + 5 * 60_000 }
+        setStats(value)
       })
-      .catch(() => setError(true))
+      .catch((err) => {
+        if (err?.name === "AbortError") return
+        setError(true)
+      })
+
+    return () => controller.abort()
   }, [])
 
   const human_readable_total = stats?.data.human_readable_total

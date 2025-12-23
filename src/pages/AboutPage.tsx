@@ -105,7 +105,7 @@ const AboutPage = () => {
               <p className="mt-6 text-base leading-7 text-white/70 sm:text-lg">
                 I’m an Electronics and Computer Engineering student at Amrita Vishwa Vidyapeetham, Bangalore, focused on building
                 reliable systems and products end-to-end. My core focus is backend and smart contract development—designing clean
-                APIs, solid data models, and secure on-chain logic. I also enjoy building polished frontends when it helps ship a
+                APIs, solid data models, and secure on-chain logic. I also enjoy building polished frontend when it helps ship a
                 complete product.
               </p>
             </section>
