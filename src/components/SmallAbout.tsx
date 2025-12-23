@@ -17,7 +17,7 @@ const SmallAbout = ({ showKnowMore = false }: SmallAboutProps) => {
       </h2>
 
       <p className="mt-6 max-w-2xl text-base leading-7 text-white/70 sm:text-lg">
-        I’m a computer science student passionate about Web3 and blockchain.
+        I’m an Electronics and Computer Engineering student passionate about Web3 and blockchain.
         My main focus is backend and smart contract development, with a strong interest in building complete DApps end-to-end.
       </p>
 

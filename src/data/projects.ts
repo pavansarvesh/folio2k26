@@ -44,7 +44,7 @@ export const projects: Project[] = [
 		links: {
 			demo: "https://bi0sdev-site.vercel.app/",
 		},
-		featured: true,
+		featured: false,
 	},
 	{
 		slug: "freshness-detector-and-quantity-counter",

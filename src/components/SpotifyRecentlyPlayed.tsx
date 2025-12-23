@@ -46,15 +46,19 @@ export default function SpotifyRecentlyPlayed() {
   return (
     <div className="flex h-full flex-col gap-4">
       <div className="rounded-xl border border-neutral-800 bg-neutral-900/30 p-4">
-        <div className="flex items-start gap-4">
-          <img src={track.image} alt={track.name} className="h-14 w-14 rounded-lg" />
+        <div className="flex items-center gap-6">
+          <img
+            src={track.image}
+            alt={track.name}
+            className="h-28 w-28 shrink-0 rounded-xl border border-white/10 object-cover"
+          />
 
           <div className="min-w-0">
-            <p className="bbh-bartle-regular truncate text-base font-semibold text-white">
+            <p className="bbh-bartle-regular truncate text-2xl font-semibold leading-tight text-white">
               {track.name}
             </p>
-            <p className="truncate text-sm text-neutral-300">{track.artists.join(", ")}</p>
-            <p className="truncate text-xs text-neutral-500">Album • {track.album}</p>
+            <p className="mt-2 truncate text-sm text-neutral-300">{track.artists.join(", ")}</p>
+            <p className="truncate text-sm text-neutral-500">Album · {track.album}</p>
           </div>
         </div>
       </div>

@@ -57,7 +57,7 @@ export default function CodingStats() {
       </div>
 
       <ol className="mt-4 divide-y divide-white/10">
-        {languages.slice(0, 5).map((lang, idx) => {
+        {languages.slice(0, 4).map((lang, idx) => {
           const percent = Number.isFinite(lang.percent) ? lang.percent : 0
           const isTop = idx === 0
 

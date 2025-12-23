@@ -7,7 +7,7 @@ type Props = {
 export default function FeaturedProjectCard({project} : Props){
     return (
     <article className="rounded-xl border border-white/10 bg-neutral-900 p-5 transition duration-300 hover:-translate-y-1 hover:border-orange-500/30">
-      <h3 className="bbh-bartle-regular text-base font-semibold text-orange-500">
+      <h3 className=" text-base font-semibold text-orange-500">
         {project.title}
       </h3>
 
