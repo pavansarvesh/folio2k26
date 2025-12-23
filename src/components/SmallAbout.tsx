@@ -8,7 +8,7 @@ const SmallAbout = ({ showKnowMore = false }: SmallAboutProps) => {
   return (
     <section id="about" className="relative mx-auto mt-2 flex max-w-6xl flex-col px-6 pt-16 pb-10 sm:mt-4 sm:pt-20 sm:pb-12">
       <div className="inline-flex items-center gap-3 text-xs tracking-widest text-white/70">
-        <span className="h-[1px] w-10 bg-orange-500/60" />
+        <span className="h-px w-10 bg-orange-500/60" />
         <span>ABOUT</span>
       </div>
 
