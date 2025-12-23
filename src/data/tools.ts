@@ -129,7 +129,7 @@ export const tools: Tools[] = [
 				id: "wsl",
 				name: "Ubuntu 24.0 LTS",
 				iconPath: "/toolsIcon/ubuntu.png",
-				description: "Wsl 2",
+				description: "WSL 2",
 				link: "https://ubuntu.com/desktop/wsl",
 			},
 		],
