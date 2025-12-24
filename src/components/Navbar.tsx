@@ -1,8 +1,21 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+	const desktopLinkClass = ({ isActive }: { isActive: boolean }) =>
+		isActive ? "text-orange-500" : "text-white/80 hover:text-white";
+
+	const mobileLinkClass = ({ isActive }: { isActive: boolean }) =>
+		isActive
+			? "rounded-xl bg-white/5 px-3 py-2 text-orange-500"
+			: "rounded-xl px-3 py-2 text-white/80 hover:bg-white/5 hover:text-white";
+
+	const socialsPillClass = ({ isActive }: { isActive: boolean }) =>
+		isActive
+			? "hidden rounded-full bg-orange-500 px-4 py-2 text-xs font-medium text-white sm:inline-flex"
+			: "hidden rounded-full bg-white px-4 py-2 text-xs font-medium text-neutral-900 hover:bg-white/90 sm:inline-flex";
 
 	return (
 		<header className='sticky top-0 z-50 border-b border-white/10 bg-neutral-950'>
@@ -14,15 +27,15 @@ const Navbar = () => {
 				</a>
 
 				<nav className='absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 sm:flex'>
-					<Link to='/about' className='text-white/80 hover:text-white'>
+					<NavLink to='/about' end className={desktopLinkClass}>
 						ABOUT
-					</Link>
-					<Link to='/projects' className='text-white/80 hover:text-white'>
+					</NavLink>
+					<NavLink to='/projects' className={desktopLinkClass}>
 						PROJECTS
-					</Link>
-					<Link to='/blog' className='text-white/80 hover:text-white'>
+					</NavLink>
+					<NavLink to='/blog' end className={desktopLinkClass}>
 						BLOG
-					</Link>
+					</NavLink>
 				</nav>
 
 				<div className='flex items-center gap-3'>
@@ -42,12 +55,9 @@ const Navbar = () => {
 					>
 						DOWNLOAD RESUME
 					</a>
-					<Link
-						to='/socials'
-						className='hidden rounded-full bg-white px-4 py-2 text-xs font-medium text-neutral-900 hover:bg-white/90 sm:inline-flex'
-					>
+					<NavLink to='/socials' end className={socialsPillClass}>
 						SOCIALS
-					</Link>
+					</NavLink>
 				</div>
 
 				<div
@@ -59,34 +69,37 @@ const Navbar = () => {
 					}
 				>
 					<div className='grid gap-2 text-sm'>
-						<Link
+						<NavLink
 							to='/about'
-							className='rounded-xl px-3 py-2 text-white/80 hover:bg-white/5 hover:text-white'
+							end
+							className={mobileLinkClass}
 							onClick={() => setMobileMenuOpen(false)}
 						>
 							ABOUT
-						</Link>
-						<Link
+						</NavLink>
+						<NavLink
 							to='/projects'
-							className='rounded-xl px-3 py-2 text-white/80 hover:bg-white/5 hover:text-white'
+							className={mobileLinkClass}
 							onClick={() => setMobileMenuOpen(false)}
 						>
 							PROJECTS
-						</Link>
-						<Link
+						</NavLink>
+						<NavLink
 							to='/blog'
-							className='rounded-xl px-3 py-2 text-white/80 hover:bg-white/5 hover:text-white'
+							end
+							className={mobileLinkClass}
 							onClick={() => setMobileMenuOpen(false)}
 						>
 							BLOG
-						</Link>
-						<Link
+						</NavLink>
+						<NavLink
 							to='/socials'
-							className='rounded-xl px-3 py-2 text-white/80 hover:bg-white/5 hover:text-white'
+							end
+							className={mobileLinkClass}
 							onClick={() => setMobileMenuOpen(false)}
 						>
 							SOCIALS
-						</Link>
+						</NavLink>
 						<a
 							href='/PavanResume.pdf'
 							download

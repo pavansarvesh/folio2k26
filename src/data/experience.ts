@@ -52,8 +52,8 @@ export const experiences: Experience[] = [
 		expTitle: "GRC Intern",
 		company: "Cybersecurity-NxxT",
 		location: "Coimbatore, Tamil Nadu",
-		description: `- Learnt about Governance, Risk and Compliance and IS027001
-	- Made my own Risk Assessment Sheet and did a sample Risk Assessment based on IS027001`,
+		description: `Learnt about Governance, Risk and Compliance and IS027001
+	Made my own Risk Assessment Sheet and did a sample Risk Assessment based on IS027001`,
 		startDate: "Jun 2025",
 		endDate: "Jun 2025",
 	},
