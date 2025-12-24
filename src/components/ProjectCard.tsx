@@ -1,6 +1,8 @@
 import type { Project } from "../data/projects"
+import { Link } from "react-router-dom"
 
 export function ProjectCard({
+  slug,
     title,
     tagline,
     description,
@@ -9,7 +11,9 @@ export function ProjectCard({
 }: Project) {
   return (
     <div className="rounded-xl border border-white/10 bg-neutral-900 p-6 transition duration-300 hover:-translate-y-1 hover:border-white/20">
-      <h3 className="text-xl font-semibold text-orange-500">{title}</h3>
+      <Link to={`/projects/${slug}`}>
+        <h3 className="text-xl font-semibold text-orange-500 hover:underline">{title}</h3>
+      </Link>
       <p className="mt-1 text-sm text-white/60">{tagline}</p>
 
       <p className="mt-4 text-white/80">{description}</p>

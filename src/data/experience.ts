@@ -33,7 +33,7 @@ export const experiences: Experience[] = [
 		company: "Team bi0sblr",
 		location: "Bengaluru, Karnataka",
 		description:
-			"Helping The community to design and build websites and posters for the meetups and handling https://www.bi0smeetup.in/",
+			"Helping The community to design and build websites and posters for the meetups",
 		startDate: "Jan 2025",
 		endDate: "Jul 2025",
 	},
