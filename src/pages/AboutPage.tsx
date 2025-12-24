@@ -91,9 +91,6 @@ const AboutPage = () => {
 		<div className='min-h-screen bg-neutral-950 text-white'>
 			<Navbar />
 			<main className='mx-auto max-w-7xl px-6 py-16 sm:py-20'>
-				<div className='md:hidden sticky top-24 z-10 mb-10 rounded-2xl border border-white/10 bg-neutral-900/40 p-6'>
-					<TableOfContents />
-				</div>
 				<div className='grid gap-10 md:grid-cols-12 md:items-start'>
 					<div className='md:col-span-9'>
 						<section id='introduction' className='scroll-mt-24'>
