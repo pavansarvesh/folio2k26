@@ -6,7 +6,7 @@ const Hero = () => {
 			{/* background */}
 			<div className='pointer-events-none absolute inset-0'>
 				<div className='absolute inset-0 bg-neutral-950' />
-				<div className='absolute inset-0 opacity-95 [background-image:radial-gradient(rgba(255,255,255,0.22)_1px,transparent_1px)] [background-size:18px_18px]' />
+				<div className='absolute inset-0 hidden opacity-95 [background-image:radial-gradient(rgba(255,255,255,0.22)_1px,transparent_1px)] [background-size:18px_18px] sm:block' />
 				<div className='absolute inset-0 bg-linear-to-b from-transparent via-neutral-950/10 to-neutral-950/35' />
 			</div>
 
