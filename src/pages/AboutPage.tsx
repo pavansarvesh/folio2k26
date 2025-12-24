@@ -90,7 +90,7 @@ const AboutPage = () => {
 	return (
 		<div className='min-h-screen bg-neutral-950 text-white'>
 			<Navbar />
-			<main className='mx-auto max-w-7xl px-6 py-16 sm:py-20'>
+			<main className='mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:max-w-7xl lg:py-20'>
 				<div className='grid gap-10 md:grid-cols-12 md:items-start'>
 					<div className='md:col-span-9'>
 						<section id='introduction' className='scroll-mt-24'>
@@ -99,11 +99,11 @@ const AboutPage = () => {
 								<span>ABOUT</span>
 							</div>
 
-							<h1 className='bbh-bartle-regular mt-6 text-5xl font-medium leading-[1.02] tracking-tight text-white sm:text-6xl'>
+							<h1 className='bbh-bartle-regular mt-6 text-4xl font-medium leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl'>
 								About ME
 							</h1>
 
-							<p className='mt-6 text-base leading-7 text-white/70 sm:text-lg'>
+							<p className='mt-5 text-sm leading-7 text-white/70 sm:mt-6 sm:text-base lg:text-lg'>
 								I’m an Electronics and Computer Engineering student at Amrita
 								Vishwa Vidyapeetham, Bangalore, focused on building reliable
 								systems and products end-to-end. My core focus is backend and
@@ -113,7 +113,7 @@ const AboutPage = () => {
 							</p>
 						</section>
 
-						<section className='mt-12 scroll-mt-24' id='education'>
+						<section className='mt-10 scroll-mt-24 sm:mt-12' id='education'>
 							<h2 className='text-sm font-medium tracking-widest text-orange-500/80'>
 								EDUCATION
 							</h2>
@@ -121,14 +121,14 @@ const AboutPage = () => {
 								{education.map((edu) => (
 									<div
 										key={`${edu.slug}`}
-										className='rounded-2xl border border-white/10 bg-white/5 p-5'
+										className='rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5'
 									>
 										<div className='flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between'>
 											<div className='min-w-0'>
-												<div className='text-base font-semibold text-white'>
+												<div className='text-sm font-semibold text-white sm:text-base lg:text-base'>
 													{edu.course}
 												</div>
-												<div className='mt-1 text-sm text-white/70'>
+												<div className='mt-1 text-xs text-white/70 sm:text-sm lg:text-sm'>
 													<span>{edu.institute},</span>{" "}
 													<span className='font-mono text-white/60'>
 														{edu.location}
@@ -144,7 +144,7 @@ const AboutPage = () => {
 							</div>
 						</section>
 
-						<section className='mt-12 scroll-mt-24' id='experience'>
+						<section className='mt-10 scroll-mt-24 sm:mt-12' id='experience'>
 							<h2 className='text-sm font-medium tracking-widest text-orange-500/80'>
 								EXPERIENCE
 							</h2>
@@ -152,14 +152,14 @@ const AboutPage = () => {
 								{experiences.map((experience) => (
 									<div
 										key={`${experience.slug}`}
-										className='rounded-2xl border border-white/10 bg-white/5 p-5'
+										className='rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5'
 									>
 										<div className='flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between'>
 											<div className='min-w-0'>
-												<div className='text-base font-semibold text-white'>
+												<div className='text-sm font-semibold text-white sm:text-base lg:text-base'>
 													{experience.expTitle}
 												</div>
-												<div className='mt-1 text-sm text-white/70'>
+												<div className='mt-1 text-xs text-white/70 sm:text-sm lg:text-sm'>
 													<span className='truncate'>{experience.company}</span>
 													{experience.location ? (
 														<>
@@ -169,7 +169,7 @@ const AboutPage = () => {
 														</>
 													) : null}
 												</div>
-												<div className='mt-3 text-sm text-white/70'>
+												<div className='mt-3 text-xs text-white/70 sm:text-sm lg:text-sm'>
 													{renderDescription(experience.description)}
 												</div>
 											</div>
@@ -182,17 +182,17 @@ const AboutPage = () => {
 							</div>
 						</section>
 
-						<section className='mt-12 scroll-mt-24' id='skills'>
+						<section className='mt-10 scroll-mt-24 sm:mt-12' id='skills'>
 							<h2 className='text-sm font-medium tracking-widest text-orange-500/80'>
 								SKILLS
 							</h2>
 
-							<div className='mt-4 rounded-2xl border border-white/10 bg-white/5 p-5'>
+							<div className='mt-4 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5'>
 								<div className='mt-2 grid gap-3'>
 									{SKILLS.map(({ category, items }) => (
 										<div
 											key={category}
-											className='rounded-xl border border-white/10 bg-neutral-950/40 p-4'
+											className='rounded-xl border border-white/10 bg-neutral-950/40 p-3 sm:p-4'
 										>
 											<div className='text-xs font-medium tracking-widest text-white/80'>
 												{category}
@@ -212,20 +212,20 @@ const AboutPage = () => {
 								</div>
 							</div>
 						</section>
-						<section className='mt-12 scroll-mt-24' id='toolkit'>
+						<section className='mt-10 scroll-mt-24 sm:mt-12' id='toolkit'>
 							<h2 className='text-sm font-medium tracking-widest text-orange-500/80'>
 								MY TOOlKIT
 							</h2>
 
-							<div className='mt-4 rounded-2xl border border-white/10 bg-white/5 p-5'>
+							<div className='mt-4 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5'>
 								<div className='grid gap-5'>
 									{toolGroups.map((group) => (
 										<div
 											key={group.id}
-											className='rounded-2xl border border-white/10 bg-neutral-950/20 p-5'
+											className='rounded-2xl border border-white/10 bg-neutral-950/20 p-4 sm:p-5'
 										>
 											<div className='flex items-center justify-between gap-4'>
-												<div className='text-base font-semibold text-white'>
+												<div className='text-sm font-semibold text-white sm:text-base lg:text-base'>
 													{group.category}
 												</div>
 												<div
@@ -234,14 +234,14 @@ const AboutPage = () => {
 												/>
 											</div>
 
-											<div className='mt-5 grid gap-3 sm:grid-cols-2'>
+											<div className='mt-4 grid gap-3 sm:mt-5 sm:grid-cols-2'>
 												{group.tool.map((tool) => (
 													<a
 														key={tool.id}
 														href={tool.link}
 														target='_blank'
 														rel='noreferrer'
-														className='group flex items-center gap-4 rounded-xl border border-transparent p-4 transition duration-200 hover:-translate-y-0.5 hover:border-orange-500/30 hover:bg-white/6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/30'
+														className='group flex items-center gap-4 rounded-xl border border-transparent p-3 transition duration-200 hover:-translate-y-0.5 hover:border-orange-500/30 hover:bg-white/6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/30 sm:p-4'
 													>
 														<div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ring-1 ring-white/10 transition group-hover:ring-orange-500/30'>
 															<img

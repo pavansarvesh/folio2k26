@@ -27,7 +27,7 @@ const Hero = () => {
 						</span>
 					</div>
 
-					<h1 className='bbh-bartle-regular mt-6 max-w-5xl text-5xl font-medium leading-[1.02] tracking-tight text-white sm:text-7xl'>
+					<h1 className='bbh-bartle-regular mt-6 max-w-5xl text-4xl font-medium leading-[1.02] tracking-tight text-white sm:text-7xl'>
 						Pavan Sarvesh
 					</h1>
 
