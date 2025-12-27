@@ -113,7 +113,7 @@ export default function SpotifyRecentlyPlayed() {
 							alt='Spotify'
 							className='h-4 w-4'
 						/>
-						Open On Spotify
+						Play On Spotify
 					</a>
 
 					{SPOTIFY_PROFILE_URL ? (
@@ -129,7 +129,7 @@ export default function SpotifyRecentlyPlayed() {
 								alt='Spotify'
 								className='h-4 w-4'
 							/>
-							Follow Me
+							My Profile
 						</a>
 					) : null}
 				</div>
