@@ -1,73 +1,147 @@
-# React + TypeScript + Vite
+<div align="center">
+  <!-- Optional: remove this line if you don't want a logo in the README -->
+  <img src="public/logo.png" width="96" alt="Site logo" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <h1>folio2k26</h1>
 
-Currently, two official plugins are available:
+  <p>Personal portfolio site built with React + TypeScript + Vite.</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  <img src="public/screenshot.png" width="1000" alt="Site screenshot" />
+</div>
 
-## React Compiler
+## Contents
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Environment Variables](#environment-variables)
+- [API Endpoints](#api-endpoints)
+- [Scripts](#scripts)
+- [Deployment](#deployment)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This repo contains a React single-page application (SPA) with a small API layer used to fetch live data (e.g. WakaTime stats and Spotify recently played).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Node/Express (local API in development)
+- Vercel Serverless Functions (API in production)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project Structure
+
+- `src/` — main frontend app
+  - `src/pages/` — route-level pages
+  - `src/components/` — reusable UI components
+  - `src/data/` — static content (projects/skills/experience/etc.)
+- `api/` — Vercel serverless functions (deployed API)
+- `server/` — local Express server for API during development
+- `public/` — static assets (includes `logo.png` and `screenshot.png`)
+
+## Getting Started
+
+Quick start (two terminals):
+
+```bash
+pnpm install
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+In a second terminal:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm exec ts-node --esm server/index.ts
 ```
+
+### Prerequisites
+
+- Node.js (recommended: current LTS)
+- pnpm
+
+### Install
+
+```bash
+pnpm install
+```
+
+### Run (frontend)
+
+```bash
+pnpm dev
+```
+
+The site starts on the Vite dev server.
+
+### Run (API for local development)
+
+The frontend calls `/api/*`. In development, Vite proxies `/api` to a local server on `http://localhost:3001`.
+
+Start the API server in a second terminal:
+
+```bash
+pnpm exec ts-node --esm server/index.ts
+```
+
+If the above doesn’t work on your machine, this alternative is equivalent:
+
+```bash
+node --loader ts-node/esm server/index.ts
+```
+
+## Environment Variables
+
+Create a `.env` file in the project root for local development (used by `server/index.ts`).
+
+```bash
+WAKATIME_API_KEY=your_wakatime_api_key
+
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+SPOTIFY_REFRESH_TOKEN=your_spotify_refresh_token
+```
+
+For production on Vercel, add the same variables in the Vercel Project Settings.
+
+## API Endpoints
+
+The app uses these endpoints:
+
+- `GET /api/wakatime` — proxies WakaTime “last 7 days” stats
+- `GET /api/spotify` — returns the most recently played Spotify track
+
+Notes:
+
+- On Vercel, these routes are implemented by `api/wakatime.ts` and `api/spotify.ts`.
+- Locally, they are served by the Express server in `server/index.ts` and reached via the Vite proxy.
+
+## Scripts
+
+```bash
+# Dev server
+pnpm dev
+
+# Production build
+pnpm build
+
+# Preview the production build locally
+pnpm preview
+
+# Lint
+pnpm lint
+```
+
+## Deployment
+
+- This repo is set up for SPA routing on Vercel via `vercel.json` rewrites.
+- Frontend is built with Vite.
+- API routes are deployed as Vercel Serverless Functions from `api/`.
+
+## License
+
+See `LICENSE`.
