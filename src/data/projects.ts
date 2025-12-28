@@ -134,7 +134,7 @@ export const projects: Project[] = [
 		title: "Freshness detector and quantity counter",
 		tagline: "Realtime Billing System",
 		description:
-			"A real-time computer vision pipeline that estimates produce freshness, counts items, and outputs a structured table for ops/billing workflows.",
+			"A real-time computer vision pipeline that estimates produce freshness, counts items, and outputs a structured table for ops/billing workflows. Made Specially for Flipkart GRID 6.0",
 		caseStudy: {
 			overview:
 				"A computer-vision pipeline that estimates produce freshness and counts items, then summarizes results in a table for quick operational use. Built for a Flipkart GRID 6.0 problem statement: real-time inputs, consistent output formatting, and a workflow that can plug into billing or inventory operations.",
