@@ -6,7 +6,7 @@ const SOCIAL = {
 	github: "https://github.com/pavansarvesh",
 	linkedin: "https://www.linkedin.com/in/pavansarvesh/",
 	// Optional: add your invite/profile URL to show Discord.
-	discord: "pavansarveshr",
+	discord: "https://discordapp.com/users/758199430662586369",
 	x: "https://x.com/pavansarveshr",
 };
 
