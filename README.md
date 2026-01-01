@@ -104,6 +104,12 @@ WAKATIME_API_KEY=your_wakatime_api_key
 SPOTIFY_CLIENT_ID=your_spotify_client_id
 SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
 SPOTIFY_REFRESH_TOKEN=your_spotify_refresh_token
+
+# Frontend (Vite) env vars must start with VITE_
+# Sepolia RPC used by the Resume verifier (optional; defaults to a public endpoint)
+VITE_SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
+# If using Ankr, you must include the API key as a path segment:
+# VITE_SEPOLIA_RPC_URL=https://rpc.ankr.com/eth_sepolia/<YOUR_API_KEY>
 ```
 
 For production on Vercel, add the same variables in the Vercel Project Settings.

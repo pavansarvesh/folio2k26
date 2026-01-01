@@ -48,13 +48,12 @@ const Navbar = () => {
 					>
 						MENU
 					</button>
-					<a
-						href='/PavanResume.pdf'
-						download
+					<NavLink
+						to='/resume'
 						className='hidden rounded-full bg-white/10 px-4 py-2 text-xs font-medium text-white hover:bg-white/15 sm:inline-flex'
 					>
 						DOWNLOAD RESUME
-					</a>
+					</NavLink>
 					<NavLink to='/socials' end className={socialsPillClass}>
 						SOCIALS
 					</NavLink>
@@ -100,14 +99,13 @@ const Navbar = () => {
 						>
 							SOCIALS
 						</NavLink>
-						<a
-							href='/PavanResume.pdf'
-							download
+						<NavLink
+							to='/resume'
 							className='rounded-xl px-3 py-2 text-white/80 hover:bg-white/5 hover:text-white'
 							onClick={() => setMobileMenuOpen(false)}
 						>
 							DOWNLOAD RESUME
-						</a>
+						</NavLink>
 					</div>
 				</div>
 			</div>
