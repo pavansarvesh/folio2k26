@@ -16,6 +16,7 @@
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [Environment Variables](#environment-variables)
+- [Resume Verification](#resume-verification)
 - [API Endpoints](#api-endpoints)
 - [Scripts](#scripts)
 - [Deployment](#deployment)
@@ -107,12 +108,30 @@ SPOTIFY_REFRESH_TOKEN=your_spotify_refresh_token
 
 # Frontend (Vite) env vars must start with VITE_
 # Sepolia RPC used by the Resume verifier (optional; defaults to a public endpoint)
-SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
+VITE_SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
 # If using Ankr, you must include the API key as a path segment:
 # VITE_SEPOLIA_RPC_URL=https://rpc.ankr.com/eth_sepolia/<YOUR_API_KEY>
 ```
 
 For production on Vercel, add the same variables in the Vercel Project Settings.
+
+## Resume Verification
+
+The Resume page supports authenticity verification.
+
+How it works:
+
+- The browser computes a SHA-256 hash of the uploaded resume file bytes (client-side).
+- That hash (formatted as a `0x...` hex string) is compared to the expected `bytes32` hash.
+- The expected hash is read from Sepolia via `viem` when the contract is available; if the
+  contract is not deployed/reachable, it falls back to a built-in hash so the page still works.
+
+Steps:
+
+1. Open `/resume`
+2. Download the Resume
+3. Upload the same file in the verifier
+4. Status shows **Verified** when hashes match bit-for-bit
 
 ## API Endpoints
 

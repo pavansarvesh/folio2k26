@@ -37,6 +37,7 @@ export const projects: Project[] = [
 			highlights: [
 				"SPA routing with clean URLs for projects and sections",
 				"Reusable cards/sections to keep the layout consistent",
+				"Resume authenticity verification (SHA-256 file hash vs bytes32 source of truth)",
 				"Content stored in structured data for easy updates",
 				"Deployed on Vercel for quick iteration",
 			],
@@ -51,7 +52,7 @@ export const projects: Project[] = [
 				"Add a consistent writing format for case studies",
 			],
 		},
-		tech: ["Vite", "Figma", "Git", "Vercel"],
+		tech: ["Vite", "Figma", "Viem", "Git", "Vercel"],
 		links: {
 			demo: "/",
 		},
