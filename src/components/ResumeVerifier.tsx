@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { getOnChainResumeHash } from "../lib/getResumeHash";
+import { RESUME_CONTRACT_ADDRESS } from "../lib/resumeContract";
 
 type VerificationStatus =
 	| "loading"
@@ -144,13 +145,23 @@ export default function ResumeVerifier() {
 						Choose the downloaded PDF, then click verify.
 					</p>
 				</div>
-				<span
-					className={`inline-flex w-fit shrink-0 items-center rounded-full border px-3 py-1 text-xs font-medium ${badgeStyles(
-						status
-					)}`}
-				>
-					{badgeLabel(status)}
-				</span>
+				<div className='flex w-full items-center justify-between gap-3 sm:w-auto sm:flex-col sm:items-end sm:justify-start sm:gap-2'>
+					<span
+						className={`order-1 inline-flex w-fit shrink-0 items-center rounded-full border px-3 py-1 text-xs font-medium sm:order-2 ${badgeStyles(
+							status
+						)}`}
+					>
+						{badgeLabel(status)}
+					</span>
+					<a
+						href={`https://sepolia.etherscan.io/address/${RESUME_CONTRACT_ADDRESS}`}
+						target='_blank'
+						rel='noreferrer'
+						className='order-2 whitespace-nowrap text-xs font-medium text-white/60 underline decoration-white/20 underline-offset-4 hover:text-orange-500 hover:decoration-orange-500 sm:order-1'
+					>
+						View on Etherscan
+					</a>
+				</div>
 			</div>
 
 			<div className='mt-5 flex flex-col gap-3 sm:flex-row sm:items-center'>
