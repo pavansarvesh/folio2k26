@@ -107,7 +107,7 @@ SPOTIFY_REFRESH_TOKEN=your_spotify_refresh_token
 
 # Frontend (Vite) env vars must start with VITE_
 # Sepolia RPC used by the Resume verifier (optional; defaults to a public endpoint)
-VITE_SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
+SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
 # If using Ankr, you must include the API key as a path segment:
 # VITE_SEPOLIA_RPC_URL=https://rpc.ankr.com/eth_sepolia/<YOUR_API_KEY>
 ```
