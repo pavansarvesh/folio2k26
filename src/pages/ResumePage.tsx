@@ -2,7 +2,7 @@ import { useMemo } from "react";
 
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { ResumeVerifier } from "../components/ResumeVerifier";
+import ResumeVerifier from "../components/ResumeVerifier";
 
 /**
  * Resume page
@@ -94,14 +94,7 @@ const ResumePage = () => {
 							</div>
 						</div>
 					</section>
-
 					<section className='lg:col-span-7'>
-						<div className='mb-4 rounded-2xl border border-neutral-800 bg-neutral-900/40 p-4 sm:p-6'>
-							<h2 className='text-base font-semibold text-white'>Verify</h2>
-							<p className='mt-1 text-sm text-white/60'>
-								Upload the downloaded RESUME below to verify its authenticity.
-							</p>
-						</div>
 						<ResumeVerifier />
 					</section>
 				</div>

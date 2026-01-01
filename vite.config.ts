@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [react()],
+	// Allow client-side access to selected non-VITE env vars.
 	esbuild: {
 		drop: ["console", "debugger"],
 	},

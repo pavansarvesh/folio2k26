@@ -16,35 +16,24 @@
 import { createPublicClient, http } from "viem";
 import { sepolia } from "viem/chains";
 
-// 2. Set up your client with desired chain & transport.
-// `SEPOLIA_RPC_URL` can be set in `.env` for your preferred provider.
-const DEFAULT_SEPOLIA_RPC_URL = "https://ethereum-sepolia-rpc.publicnode.com";
-const ANKR_SEPOLIA_BASE_URL = "https://rpc.ankr.com/eth_sepolia";
+// 2. Create the client lazily.
+// Important: do NOT throw at module import time, or the entire app can render blank.
+let cachedClient: ReturnType<typeof createPublicClient> | undefined;
 
-const envSepoliaRpcUrl = import.meta.env.SEPOLIA_RPC_URL as string | undefined;
+export function getClient() {
+	if (cachedClient) return cachedClient;
 
-const sepoliaRpcUrl = (() => {
-	if (!envSepoliaRpcUrl) return DEFAULT_SEPOLIA_RPC_URL;
-
-	// Ankr requires an API key appended as a path segment, e.g.
-	// https://rpc.ankr.com/eth_sepolia/<YOUR_API_KEY>
-	// If the env var is set to the base URL only, viem will surface a confusing
-	// "Missing or invalid parameters" error when the upstream returns 401.
-	if (
-		envSepoliaRpcUrl === ANKR_SEPOLIA_BASE_URL ||
-		envSepoliaRpcUrl === `${ANKR_SEPOLIA_BASE_URL}/`
-	) {
-		console.warn(
-			"[viem] SEPOLIA_RPC_URL is set to Ankr's base Sepolia URL without an API key. " +
-				"Falling back to PublicNode. Use: https://rpc.ankr.com/eth_sepolia/<YOUR_API_KEY>"
+	const url = import.meta.env.VITE_SEPOLIA_RPC_URL as string | undefined;
+	if (!url) {
+		throw new Error(
+			"[viem] Missing SEPOLIA_RPC_URL. Set it in your .env (e.g. SEPOLIA_RPC_URL=https://...)."
 		);
-		return DEFAULT_SEPOLIA_RPC_URL;
 	}
 
-	return envSepoliaRpcUrl;
-})();
+	cachedClient = createPublicClient({
+		chain: sepolia,
+		transport: http(url),
+	});
 
-export const client = createPublicClient({
-	chain: sepolia,
-	transport: http(sepoliaRpcUrl),
-});
+	return cachedClient;
+}
