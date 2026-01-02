@@ -107,7 +107,8 @@ SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
 SPOTIFY_REFRESH_TOKEN=your_spotify_refresh_token
 
 # Frontend (Vite) env vars must start with VITE_
-# Sepolia RPC used by the Resume verifier (optional; defaults to a public endpoint)
+# Sepolia RPC used by the Resume verifier (required for the verifier to load on-chain data)
+# Example public RPC:
 VITE_SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
 # If using Ankr, you must include the API key as a path segment:
 # VITE_SEPOLIA_RPC_URL=https://rpc.ankr.com/eth_sepolia/<YOUR_API_KEY>
@@ -117,21 +118,53 @@ For production on Vercel, add the same variables in the Vercel Project Settings.
 
 ## Resume Verification
 
-The Resume page supports authenticity verification.
+The Resume page supports authenticity verification by comparing a locally computed SHA-256 hash
+of the PDF you upload against the hash stored on-chain (Sepolia).
 
-How it works:
-
-- The browser computes a SHA-256 hash of the uploaded resume file bytes (client-side).
-- That hash (formatted as a `0x...` hex string) is compared to the expected `bytes32` hash.
-- The expected hash is read from Sepolia via `viem` when the contract is available; if the
-  contract is not deployed/reachable, it falls back to a built-in hash so the page still works.
-
-Steps:
+### User Flow
 
 1. Open `/resume`
-2. Download the Resume
-3. Upload the same file in the verifier
-4. Status shows **Verified** when hashes match bit-for-bit
+2. Download the Resume PDF
+3. Upload that same PDF in the verifier
+4. Click **Verify**
+
+You’ll see a status badge:
+
+- **Loading**: fetching the on-chain hash
+- **Select a PDF**: no file chosen yet
+- **Ready**: file selected, ready to verify
+- **Verifying**: hashing the file locally
+- **Verified**: local hash matches the on-chain value
+- **Mismatch**: local hash does not match the on-chain value
+- **Error**: failed to fetch or verify
+
+### What’s On-Chain
+
+- A Sepolia smart contract exposes a `resumeHash()` view method that returns a `bytes32`.
+- The contract address and ABI live in `src/lib/resumeContract.ts`.
+- The verifier links to Sepolia Etherscan so you can inspect the deployed contract.
+
+### What’s Computed In The Browser
+
+- The verifier uses the Web Crypto API (`crypto.subtle.digest`) to compute `SHA-256` over the
+  raw file bytes.
+- That digest is converted into a `0x...` hex string and compared (case-insensitive) to the
+  on-chain `bytes32` value.
+
+### How Sepolia + viem Works Here
+
+- `src/lib/viem.ts` creates a `viem` public client for the `sepolia` chain using the RPC URL
+  from `VITE_SEPOLIA_RPC_URL`.
+- `src/lib/getResumeHash.ts` calls:
+  - `client.getChainId()` and throws if it’s not Sepolia (guards against wrong RPC)
+  - `client.readContract({ functionName: "resumeHash" })` to fetch the expected hash
+
+### Troubleshooting
+
+- **Blank / error badge immediately**: ensure `VITE_SEPOLIA_RPC_URL` is set and restart `pnpm dev`.
+- **Error: RPC is on chainId X, expected Sepolia**: you pointed `VITE_SEPOLIA_RPC_URL` at the wrong network.
+- **Mismatch**: make sure you uploaded the exact same PDF you downloaded (bit-for-bit).
+- **401 / forbidden from RPC provider**: your RPC provider likely requires an API key (e.g., Ankr).
 
 ## API Endpoints
 
