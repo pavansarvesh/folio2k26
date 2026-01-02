@@ -13,8 +13,8 @@ import ResumeVerifier from "../components/ResumeVerifier";
  *   the verification flow before uploading anything.
  */
 
-const RESUME_RESUME_PATH = "/PavanResume.pdf";
-const RESUME_LAST_UPDATED_LABEL = "Jan 1, 2026";
+const RESUME_RESUME_PATH = "/Pavan-Resume-jan-2-update.pdf";
+const RESUME_LAST_UPDATED_LABEL = "Jan 2, 2026";
 
 const ResumePage = () => {
 	// Memoized label to keep the render stable and avoid sprinkling the constant everywhere.
