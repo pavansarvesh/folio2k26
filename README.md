@@ -28,12 +28,23 @@ This repo contains a React single-page application (SPA) with a small API layer 
 
 ## Tech Stack
 
-- React + TypeScript
-- Vite
-- Tailwind CSS
-- React Router
-- Node/Express (local API in development)
-- Vercel Serverless Functions (API in production)
+| Area            | Tech                                 | What it’s used for                             |
+| --------------- | ------------------------------------ | ---------------------------------------------- |
+| Frontend        | React                                | UI rendering                                   |
+| Frontend        | TypeScript                           | Type-safe app code                             |
+| Frontend        | React Router (`react-router-dom`)    | Client-side routing                            |
+| Build / Dev     | Vite                                 | Dev server + production bundling               |
+| Build / Dev     | `@vitejs/plugin-react`               | React fast refresh / JSX transform             |
+| Styling         | Tailwind CSS                         | Utility-first styling                          |
+| Styling         | PostCSS + Autoprefixer               | CSS processing + vendor prefixing              |
+| Web3            | `viem`                               | Reading Sepolia contract state (public client) |
+| Local API (dev) | Node.js + Express                    | Local `/api/*` server in development           |
+| Local API (dev) | `cors`                               | CORS configuration for local API               |
+| Local API (dev) | `dotenv`                             | Loads `.env` for the local server              |
+| Deployment      | Vercel                               | Hosting + serverless functions                 |
+| Deployment      | Vercel Node runtime (`@vercel/node`) | Serverless execution environment               |
+| Tooling         | ESLint + TypeScript ESLint           | Linting (flat config)                          |
+| Tooling         | pnpm                                 | Package manager                                |
 
 ## Project Structure
 
