@@ -55,6 +55,7 @@ export const projects: Project[] = [
 		tech: ["Vite", "Figma", "Viem", "Git", "Vercel"],
 		links: {
 			demo: "/",
+			github: "https://github.com/pavansarvesh/folio2k26",
 		},
 		featured: true,
 	},
