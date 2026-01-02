@@ -105,6 +105,13 @@ export const tools: Tools[] = [
 				description: "Crypto Wallet",
 				link: "https://metamask.io/",
 			},
+			{
+				id: "hardhat",
+				name: "Hardhat",
+				iconPath: "/toolsIcon/hardhat.svg",
+				description: "Ethereum Development Framework",
+				link: "https://hardhat.org/",
+			},
 		],
 	},
 	{
