@@ -2,6 +2,12 @@ import { useEffect, useMemo, useState } from "react";
 import { getOnChainResumeHash } from "../lib/getResumeHash";
 import { RESUME_CONTRACT_ADDRESS } from "../lib/resumeContract";
 
+import type { OnChainResumeHashResult } from "../lib/getResumeHash";
+
+type ResumeVerifierProps = {
+	onChainData?: OnChainResumeHashResult | null;
+};
+
 type VerificationStatus =
 	| "loading"
 	| "awaiting_file"
@@ -67,8 +73,8 @@ function badgeLabel(status: VerificationStatus): string {
 	}
 }
 
-export default function ResumeVerifier() {
-	const [onChainHash, setOnChainHash] = useState<`0x${string}` | null>(null);
+export default function ResumeVerifier({ onChainData }: ResumeVerifierProps) {
+	const [onChain, setOnChain] = useState<OnChainResumeHashResult | null>(null);
 	const [file, setFile] = useState<File | null>(null);
 	const [uploadedHash, setUploadedHash] = useState<`0x${string}` | null>(null);
 	const [error, setError] = useState<string | null>(null);
@@ -76,13 +82,15 @@ export default function ResumeVerifier() {
 	const [verifying, setVerifying] = useState(false);
 	const [verified, setVerified] = useState<boolean | null>(null);
 
+	const onChainHash = onChain?.resumeHash ?? null;
+
 	useEffect(() => {
 		let mounted = true;
 
 		async function load() {
 			try {
 				const h = await getOnChainResumeHash();
-				if (mounted) setOnChainHash(h);
+				if (mounted) setOnChain(h);
 			} catch (e: unknown) {
 				if (mounted) {
 					setError(e instanceof Error ? e.message : String(e));
@@ -92,11 +100,20 @@ export default function ResumeVerifier() {
 			}
 		}
 
+		// If parent already fetched on-chain data, use it and skip re-fetch.
+		if (typeof onChainData !== "undefined") {
+			setOnChain(onChainData ?? null);
+			setLoading(false);
+			return () => {
+				mounted = false;
+			};
+		}
+
 		load();
 		return () => {
 			mounted = false;
 		};
-	}, []);
+	}, [onChainData]);
 
 	const status: VerificationStatus = useMemo(() => {
 		if (loading) return "loading";

@@ -1,8 +1,11 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ResumeVerifier from "../components/ResumeVerifier";
+
+import { getOnChainResumeHash } from "../lib/getResumeHash";
+import type { OnChainResumeHashResult } from "../lib/getResumeHash";
 
 /**
  * Resume page
@@ -14,11 +17,63 @@ import ResumeVerifier from "../components/ResumeVerifier";
  */
 
 const RESUME_RESUME_PATH = "/Pavan-Resume-jan-2-update.pdf";
-const RESUME_LAST_UPDATED_LABEL = "Jan 2, 2026";
 
 const ResumePage = () => {
 	// Memoized label to keep the render stable and avoid sprinkling the constant everywhere.
-	const updatedLabel = useMemo(() => RESUME_LAST_UPDATED_LABEL, []);
+	const [onChainData, setOnChainData] =
+		useState<OnChainResumeHashResult | null>(null);
+	const [onChainLoading, setOnChainLoading] = useState(true);
+	const [onChainError, setOnChainError] = useState<string | null>(null);
+
+	function formatOnChainDate(date: Date): string {
+		return date.toLocaleString(undefined, {
+			year: "numeric",
+			month: "short",
+			day: "numeric",
+			hour: "numeric",
+			minute: "2-digit",
+			timeZoneName: "short",
+		});
+	}
+
+	useEffect(() => {
+		let mounted = true;
+		async function load() {
+			try {
+				const data = await getOnChainResumeHash();
+				if (mounted) setOnChainData(data);
+			} catch (e: unknown) {
+				if (mounted)
+					setOnChainError(e instanceof Error ? e.message : String(e));
+			} finally {
+				if (mounted) setOnChainLoading(false);
+			}
+		}
+
+		load();
+		return () => {
+			mounted = false;
+		};
+	}, []);
+
+	const onChainBadgeText = useMemo(() => {
+		if (onChainLoading) return "Fetching on-chain update…";
+		if (onChainError) return "On-chain update unavailable";
+		if (!onChainData) return "On-chain update unavailable";
+		return `Resume updated on-chain: ${formatOnChainDate(
+			onChainData.date
+		)} (block ${onChainData.blockNumber.toString()})`;
+	}, [onChainData, onChainError, onChainLoading]);
+
+	const onChainBadgeClassName = useMemo(() => {
+		if (onChainLoading) {
+			return "border-white/10 bg-white/5 text-white/70";
+		}
+		if (onChainError || !onChainData) {
+			return "border-rose-500/30 bg-rose-500/10 text-rose-200";
+		}
+		return "border-orange-500/30 bg-orange-500/10 text-orange-200";
+	}, [onChainData, onChainError, onChainLoading]);
 
 	return (
 		<div className='min-h-screen bg-neutral-950 text-white'>
@@ -36,6 +91,14 @@ const ResumePage = () => {
 					Download the latest RESUME and verify it against the on-chain hash.
 				</p>
 
+				<div className='mt-5'>
+					<span
+						className={`inline-flex w-full items-start rounded-2xl border px-4 py-2 text-xs font-medium leading-5 whitespace-normal wrap-break-word sm:w-fit sm:items-center sm:rounded-full ${onChainBadgeClassName}`}
+					>
+						{onChainBadgeText}
+					</span>
+				</div>
+
 				<div className='mt-8 rounded-2xl border border-neutral-800 bg-neutral-900/40 p-4 sm:p-6'>
 					<div className='grid gap-4 sm:grid-cols-2'>
 						<div>
@@ -50,7 +113,7 @@ const ResumePage = () => {
 						<div>
 							<h2 className='text-base font-semibold text-white'>Steps</h2>
 							<ol className='mt-2 list-decimal space-y-1 pl-5 text-sm text-white/60'>
-								<li>Download the RESUME below (updated {updatedLabel}).</li>
+								<li>Download the RESUME below.</li>
 								<li>Upload the RESUME in the verifier.</li>
 								<li>See “Verified” if the hashes match.</li>
 							</ol>
@@ -66,9 +129,6 @@ const ResumePage = () => {
 									<h2 className='text-base font-semibold text-white'>
 										Download
 									</h2>
-									<p className='mt-1 text-xs text-neutral-500'>
-										Updated {updatedLabel}
-									</p>
 								</div>
 								<span className='inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/70'>
 									PDF
@@ -95,7 +155,7 @@ const ResumePage = () => {
 						</div>
 					</section>
 					<section className='lg:col-span-7'>
-						<ResumeVerifier />
+						<ResumeVerifier onChainData={onChainData} />
 					</section>
 				</div>
 			</main>
