@@ -162,9 +162,9 @@ export default function ResumeVerifier({ onChainData }: ResumeVerifierProps) {
 						Choose the downloaded PDF, then click verify.
 					</p>
 				</div>
-				<div className='flex w-full items-center justify-between gap-3 sm:w-auto sm:flex-col sm:items-end sm:justify-start sm:gap-2'>
+				<div className='flex w-full flex-wrap items-center gap-3 sm:w-auto sm:justify-end'>
 					<span
-						className={`order-1 inline-flex w-fit shrink-0 items-center rounded-full border px-3 py-1 text-xs font-medium sm:order-2 ${badgeStyles(
+						className={`inline-flex w-fit shrink-0 items-center rounded-full border px-3 py-1 text-xs font-medium ${badgeStyles(
 							status
 						)}`}
 					>
@@ -174,7 +174,7 @@ export default function ResumeVerifier({ onChainData }: ResumeVerifierProps) {
 						href={`https://sepolia.etherscan.io/address/${RESUME_CONTRACT_ADDRESS}`}
 						target='_blank'
 						rel='noreferrer'
-						className='order-2 whitespace-nowrap text-xs font-medium text-white/60 underline decoration-white/20 underline-offset-4 hover:text-orange-500 hover:decoration-orange-500 sm:order-1'
+						className='whitespace-nowrap text-xs font-medium text-white/60 underline decoration-white/20 underline-offset-4 hover:text-orange-500 hover:decoration-orange-500'
 					>
 						View on Etherscan
 					</a>

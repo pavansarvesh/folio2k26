@@ -6,6 +6,7 @@ import ResumeVerifier from "../components/ResumeVerifier";
 
 import { getOnChainResumeHash } from "../lib/getResumeHash";
 import type { OnChainResumeHashResult } from "../lib/getResumeHash";
+import { RESUME_CONTRACT_ADDRESS } from "../lib/resumeContract";
 
 /**
  * Resume page
@@ -93,9 +94,17 @@ const ResumePage = () => {
 
 				<div className='mt-5'>
 					<span
-						className={`inline-flex w-full items-start rounded-2xl border px-4 py-2 text-xs font-medium leading-5 whitespace-normal wrap-break-word sm:w-fit sm:items-center sm:rounded-full ${onChainBadgeClassName}`}
+						className={`inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border px-4 py-2 text-xs font-medium leading-5 whitespace-normal wrap-break-word sm:rounded-full ${onChainBadgeClassName}`}
 					>
-						{onChainBadgeText}
+						<span>{onChainBadgeText}</span>
+						<a
+							href={`https://sepolia.etherscan.io/address/${RESUME_CONTRACT_ADDRESS}`}
+							target='_blank'
+							rel='noreferrer'
+							className='whitespace-nowrap underline decoration-white/20 underline-offset-4 hover:text-orange-500 hover:decoration-orange-500'
+						>
+							View on Etherscan
+						</a>
 					</span>
 				</div>
 
