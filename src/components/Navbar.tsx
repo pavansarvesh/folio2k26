@@ -104,7 +104,7 @@ const Navbar = () => {
 							className='rounded-xl px-3 py-2 text-white/80 hover:bg-white/5 hover:text-white'
 							onClick={() => setMobileMenuOpen(false)}
 						>
-							DOWNLOAD RESUME
+							RESUME
 						</NavLink>
 					</div>
 				</div>
