@@ -17,7 +17,7 @@ import { RESUME_CONTRACT_ADDRESS } from "../lib/resumeContract";
  *   the verification flow before uploading anything.
  */
 
-const RESUME_RESUME_PATH = "/Pavan-Resume-jan-2-update.pdf";
+const RESUME_RESUME_PATH = "/Pavan-Resume-jan-8-update.pdf";
 
 const ResumePage = () => {
 	// Memoized label to keep the render stable and avoid sprinkling the constant everywhere.
