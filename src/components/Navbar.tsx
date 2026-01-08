@@ -52,7 +52,7 @@ const Navbar = () => {
 						to='/resume'
 						className='hidden rounded-full bg-white/10 px-4 py-2 text-xs font-medium text-white hover:bg-white/15 sm:inline-flex'
 					>
-						DOWNLOAD RESUME
+						RESUME
 					</NavLink>
 					<NavLink to='/socials' end className={socialsPillClass}>
 						SOCIALS
