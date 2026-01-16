@@ -33,8 +33,8 @@ const Navbar = () => {
 					<NavLink to='/projects' className={desktopLinkClass}>
 						PROJECTS
 					</NavLink>
-					<NavLink to='/blog' end className={desktopLinkClass}>
-						BLOG
+					<NavLink to='/blogs' className={desktopLinkClass}>
+						BLOGS
 					</NavLink>
 				</nav>
 
@@ -84,12 +84,11 @@ const Navbar = () => {
 							PROJECTS
 						</NavLink>
 						<NavLink
-							to='/blog'
-							end
+							to='/blogs'
 							className={mobileLinkClass}
 							onClick={() => setMobileMenuOpen(false)}
 						>
-							BLOG
+							BLOGS
 						</NavLink>
 						<NavLink
 							to='/socials'
