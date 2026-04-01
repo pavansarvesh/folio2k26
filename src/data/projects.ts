@@ -22,6 +22,44 @@ export type Project = {
 
 export const projects: Project[] = [
 	{
+		slug: "joinbi0sblr",
+		title: "bi0sblr Site",
+		tagline: "Official bi0sblr recruitment landing page",
+		description:
+			"A fast, responsive recruitment site for bi0sblr with clear navigation, focused messaging, and a cybersecurity-first visual identity.",
+		caseStudy: {
+			overview:
+				"This site is built as a focused recruitment experience for bi0sblr. It combines a bold visual style with a simple single-page flow so visitors can quickly understand the team, what it does, and where to get involved.",
+			problem:
+				"Recruitment and community links were spread across platforms, making onboarding less clear for new members. The challenge was to present team identity, credibility, and calls-to-action in one cohesive page without adding unnecessary complexity.",
+			solution:
+				"I implemented the site using Astro components and a modular stylesheet system. The page is structured into reusable sections (navbar, hero, focus cards, footer), with responsive navigation, smooth anchor-based scrolling, and clear CTAs to About, Meetups, CTF, and DEV resources.",
+			highlights: [
+				"Astro component-based architecture with reusable page sections",
+				"Responsive navigation with desktop links and mobile menu",
+				"Single-page recruitment flow with smooth in-page navigation",
+				"Focus-area cards linking to key bi0sblr/community resources",
+				"Custom typography and cyber-themed styling for strong brand identity",
+			],
+			learnings: [
+				"A single-purpose landing page improves onboarding clarity",
+				"Component separation keeps iteration fast and low-risk",
+				"Strong visual consistency (spacing, type, color) improves trust and readability",
+			],
+			nextSteps: [
+				"Add a dedicated application/join workflow with form handling",
+				"Improve SEO metadata and social preview cards",
+				"Expand focus cards into full section pages with deeper content",
+			],
+		},
+		tech: ["Astro", "Tailwind CSS", "PostCSS", "TypeScript", "Git"],
+		links: {
+			demo: "https://join.bi0sblr.in/",
+			github: "",
+		},
+		featured: true,
+	},
+	{
 		slug: "folio2k26",
 		title: "Folio 2k26",
 		tagline: "My Personal Site",
@@ -94,7 +132,7 @@ export const projects: Project[] = [
 			demo: "https://chatnlearn.vercel.app/",
 			github: "https://github.com/pavansarvesh/Learnify",
 		},
-		featured: true,
+		featured: false,
 	},
 	{
 		slug: "bi0sdev-site",
