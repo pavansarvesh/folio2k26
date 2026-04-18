@@ -41,7 +41,7 @@ function badgeStyles(status: VerificationStatus): string {
 		case "error":
 			return "border-rose-500/30 bg-rose-500/10 text-rose-300";
 		case "verifying":
-			return "border-orange-500/30 bg-orange-500/10 text-orange-200";
+			return "border-[#ff8c42]/30 bg-[#ff8c42]/10 text-[#ff8c42]";
 		case "ready":
 			return "border-white/15 bg-white/5 text-white/70";
 		case "awaiting_file":
@@ -174,7 +174,7 @@ export default function ResumeVerifier({ onChainData }: ResumeVerifierProps) {
 						href={`https://sepolia.etherscan.io/address/${RESUME_CONTRACT_ADDRESS}`}
 						target='_blank'
 						rel='noreferrer'
-						className='whitespace-nowrap text-xs font-medium text-white/60 underline decoration-white/20 underline-offset-4 hover:text-orange-500 hover:decoration-orange-500'
+						className='whitespace-nowrap text-xs font-medium text-white/60 underline decoration-white/20 underline-offset-4 hover:text-[#ff8c42] hover:decoration-[#ff8c42]'
 					>
 						View on Etherscan
 					</a>
@@ -202,7 +202,7 @@ export default function ResumeVerifier({ onChainData }: ResumeVerifierProps) {
 					type='button'
 					onClick={onVerify}
 					disabled={loading || verifying || !file || !onChainHash}
-					className='inline-flex w-full items-center justify-center rounded-full bg-orange-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto'
+					className='inline-flex w-full items-center justify-center rounded-full bg-[#ff8c42] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#ff8c42] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto'
 				>
 					{verifying ? "Verifying…" : "Verify"}
 				</button>

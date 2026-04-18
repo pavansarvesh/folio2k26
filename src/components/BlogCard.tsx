@@ -25,7 +25,7 @@ export default function BlogCard({ blog }: Props) {
 				<span className='text-white/70'>{formatDate(blog.date)}</span>
 				{blog.tags?.length ? (
 					<>
-						<span className='text-orange-500/60' aria-hidden='true'>
+						<span className='text-[#ff8c42]/60' aria-hidden='true'>
 							/
 						</span>
 						<div className='flex flex-wrap gap-2'>
@@ -61,7 +61,7 @@ export default function BlogCard({ blog }: Props) {
 			<div className='mt-4'>
 				<Link
 					to={`/blogs/${slug}`}
-					className='text-sm text-white/70 underline-offset-4 transition hover:text-orange-500 hover:underline'
+					className='text-sm text-white/70 underline-offset-4 transition hover:text-[#ff8c42] hover:underline'
 				>
 					Read →
 				</Link>

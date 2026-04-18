@@ -142,7 +142,7 @@ const BlogPostPage = () => {
 						</Link>
 						<Link
 							to='/'
-							className='inline-flex items-center justify-center rounded-full bg-orange-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-orange-600'
+							className='inline-flex items-center justify-center rounded-full bg-[#ff8c42] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#ff8c42]'
 						>
 							Go home
 						</Link>
@@ -175,7 +175,7 @@ const BlogPostPage = () => {
 							<div className='flex items-center justify-between gap-4'>
 								<Link
 									to='/blogs'
-									className='text-xs tracking-widest text-white/70 hover:text-orange-500'
+									className='text-xs tracking-widest text-white/70 hover:text-[#ff8c42]'
 								>
 									← BACK TO BLOGS
 								</Link>
@@ -183,7 +183,7 @@ const BlogPostPage = () => {
 
 							<div className='inline-flex items-center gap-4 font-["JetBrains_Mono",monospace] text-xs tracking-[0.3em] text-[#ff8c42]'>
 								<span className='h-0.5 w-12 bg-[#ff8c42]' />
-								<span className='text-orange-500/80'>BLOG</span>
+								<span className='text-[#ff8c42]/80'>BLOG</span>
 							</div>
 
 							<div className='space-y-3'>
@@ -233,7 +233,7 @@ const BlogPostPage = () => {
 
 							{tocSections.length ? (
 								<aside className='hidden lg:block'>
-									<div className='sticky top-24 rounded-2xl border border-orange-500/15 bg-neutral-900/40 p-6 ring-1 ring-orange-500/10'>
+									<div className='sticky top-24 rounded-2xl border border-[#ff8c42]/15 bg-neutral-900/40 p-6 ring-1 ring-[#ff8c42]/10'>
 										<TableOfContents sections={tocSections} />
 									</div>
 								</aside>

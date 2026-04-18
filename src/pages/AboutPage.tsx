@@ -21,7 +21,7 @@ const AboutPage = () => {
 						href={part}
 						target='_blank'
 						rel='noreferrer'
-						className='text-orange-500/90 underline-offset-4 hover:underline'
+						className='text-[#ff8c42]/90 underline-offset-4 hover:underline'
 					>
 						{part}
 					</a>
@@ -97,7 +97,7 @@ const AboutPage = () => {
 						</section>
 
 						<section className='mt-10 scroll-mt-24 sm:mt-12' id='education'>
-							<h2 className='text-sm font-medium tracking-widest text-orange-500/80'>
+							<h2 className='text-sm font-medium tracking-widest text-[#ff8c42]/80'>
 								EDUCATION
 							</h2>
 							<div className='mt-4 grid gap-4'>
@@ -128,7 +128,7 @@ const AboutPage = () => {
 						</section>
 
 						<section className='mt-10 scroll-mt-24 sm:mt-12' id='experience'>
-							<h2 className='text-sm font-medium tracking-widest text-orange-500/80'>
+							<h2 className='text-sm font-medium tracking-widest text-[#ff8c42]/80'>
 								EXPERIENCE
 							</h2>
 							<div className='mt-4 grid gap-4'>
@@ -166,7 +166,7 @@ const AboutPage = () => {
 						</section>
 
 						<section className='mt-10 scroll-mt-24 sm:mt-12' id='skills'>
-							<h2 className='text-sm font-medium tracking-widest text-orange-500/80'>
+							<h2 className='text-sm font-medium tracking-widest text-[#ff8c42]/80'>
 								SKILLS
 							</h2>
 
@@ -196,7 +196,7 @@ const AboutPage = () => {
 							</div>
 						</section>
 						<section className='mt-10 scroll-mt-24 sm:mt-12' id='toolkit'>
-							<h2 className='text-sm font-medium tracking-widest text-orange-500/80'>
+							<h2 className='text-sm font-medium tracking-widest text-[#ff8c42]/80'>
 								MY TOOLKIT
 							</h2>
 
@@ -224,9 +224,9 @@ const AboutPage = () => {
 														href={tool.link}
 														target='_blank'
 														rel='noreferrer'
-														className='group flex items-center gap-4 rounded-xl border border-transparent p-3 transition duration-200 hover:-translate-y-0.5 hover:border-orange-500/30 hover:bg-white/6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/30 sm:p-4'
+														className='group flex items-center gap-4 rounded-xl border border-transparent p-3 transition duration-200 hover:-translate-y-0.5 hover:border-[#ff8c42]/30 hover:bg-white/6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff8c42]/30 sm:p-4'
 													>
-														<div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ring-1 ring-white/10 transition group-hover:ring-orange-500/30'>
+														<div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ring-1 ring-white/10 transition group-hover:ring-[#ff8c42]/30'>
 															<img
 																src={tool.iconPath}
 																alt={tool.name}
@@ -236,10 +236,10 @@ const AboutPage = () => {
 														</div>
 
 														<div className='min-w-0'>
-															<div className='truncate text-sm font-semibold text-white transition group-hover:text-orange-500/90'>
+															<div className='truncate text-sm font-semibold text-white transition group-hover:text-[#ff8c42]/90'>
 																{tool.name}
 															</div>
-															<div className='mt-0.5 truncate text-sm text-white/60 transition group-hover:text-orange-500/80'>
+															<div className='mt-0.5 truncate text-sm text-white/60 transition group-hover:text-[#ff8c42]/80'>
 																{tool.description}
 															</div>
 														</div>

@@ -36,7 +36,7 @@ export function ProjectCard({
 						href={links.github}
 						target='_blank'
 						rel='noreferrer'
-						className='inline-flex items-center text-white/80 underline-offset-4 transition duration-300 hover:text-orange-500 hover:underline'
+						className='inline-flex items-center text-white/80 underline-offset-4 transition duration-300 hover:text-[#ff8c42] hover:underline'
 					>
 						GitHub
 					</a>
@@ -46,7 +46,7 @@ export function ProjectCard({
 						href={links.demo}
 						target='_blank'
 						rel='noreferrer'
-						className='inline-flex items-center text-white/80 underline-offset-4 transition duration-300 hover:text-orange-500 hover:underline'
+						className='inline-flex items-center text-white/80 underline-offset-4 transition duration-300 hover:text-[#ff8c42] hover:underline'
 					>
 						Live
 					</a>

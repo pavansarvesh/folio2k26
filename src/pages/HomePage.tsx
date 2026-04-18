@@ -81,13 +81,13 @@ const HomePage = () => {
 
 						<a
 							href='/projects'
-							className='shrink-0 text-xs text-white/60 underline-offset-4 transition hover:text-orange-500 hover:underline sm:text-sm'
+							className='shrink-0 text-xs text-white/60 underline-offset-4 transition hover:text-[#ff8c42] hover:underline sm:text-sm'
 						>
 							View all
 						</a>
 					</div>
 
-					<div className='grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3'>
+					<div className='grid grid-cols-1 gap-6 sm:gap-8'>
 						{featuredProjects.map((project) => (
 							<FeaturedProjectCard key={project.slug} project={project} />
 						))}

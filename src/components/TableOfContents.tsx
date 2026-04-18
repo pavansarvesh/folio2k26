@@ -105,8 +105,8 @@ export default function TableOfContents({
 								aria-current={activeId === section.id ? "location" : undefined}
 								className={
 									activeId === section.id
-										? "block font-medium text-orange-500/90"
-										: "block text-white/60 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/30"
+										? "block font-medium text-[#ff8c42]/90"
+										: "block text-white/60 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff8c42]/30"
 								}
 							>
 								{section.label}

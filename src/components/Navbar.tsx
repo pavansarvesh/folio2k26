@@ -74,7 +74,7 @@ const Navbar = () => {
 					</NavLink>
 					<NavLink
 						to='/resume'
-						className="nav-anim rounded-md bg-[#ff8c42] px-4 py-2 font-['Inter'] text-sm font-semibold text-black transition-colors hover:bg-[#fb923c]"
+						className="nav-anim rounded-md bg-[#ff8c42] px-4 py-2 font-['Inter'] text-sm font-semibold text-black transition-colors hover:bg-[#ff8c42]"
 					>
 						Resume
 					</NavLink>
@@ -125,7 +125,7 @@ const Navbar = () => {
 						</NavLink>
 						<NavLink
 							to='/resume'
-							className="rounded-xl bg-[#ff8c42] px-3 py-2 font-['Inter'] font-semibold text-black hover:bg-[#fb923c]"
+							className="rounded-xl bg-[#ff8c42] px-3 py-2 font-['Inter'] font-semibold text-black hover:bg-[#ff8c42]"
 							onClick={() => setMobileMenuOpen(false)}
 						>
 							Resume

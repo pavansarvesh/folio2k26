@@ -63,7 +63,7 @@ const ResumePage = () => {
 		if (onChainError || !onChainData) {
 			return "border-rose-500/30 bg-rose-500/10 text-rose-200";
 		}
-		return "border-orange-500/30 bg-orange-500/10 text-orange-200";
+		return "border-[#ff8c42]/30 bg-[#ff8c42]/10 text-[#ff8c42]";
 	}, [onChainData, onChainError, onChainLoading]);
 
 	return (
@@ -91,7 +91,7 @@ const ResumePage = () => {
 							href={`https://sepolia.etherscan.io/address/${RESUME_CONTRACT_ADDRESS}`}
 							target='_blank'
 							rel='noreferrer'
-							className='whitespace-nowrap underline decoration-white/20 underline-offset-4 hover:text-orange-500 hover:decoration-orange-500'
+							className='whitespace-nowrap underline decoration-white/20 underline-offset-4 hover:text-[#ff8c42] hover:decoration-[#ff8c42]'
 						>
 							View on Etherscan
 						</a>
@@ -138,7 +138,7 @@ const ResumePage = () => {
 								<a
 									href={RESUME_PATH}
 									download
-									className='inline-flex w-full items-center justify-center rounded-full bg-orange-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-orange-600 sm:w-auto'
+									className='inline-flex w-full items-center justify-center rounded-full bg-[#ff8c42] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#ff8c42] sm:w-auto'
 								>
 									Download Resume
 								</a>

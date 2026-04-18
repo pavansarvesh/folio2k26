@@ -78,13 +78,13 @@ html {
 }
 
 .blog-prose a {
-  color: rgba(249, 115, 22, 0.95);
+  color: rgba(255, 140, 66, 0.95);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .blog-prose a:hover {
-  color: rgba(249, 115, 22, 1);
+  color: rgba(255, 140, 66, 1);
 }
 
 .blog-prose ul,
@@ -121,7 +121,7 @@ html {
 .blog-prose blockquote {
   margin: 1rem 0;
   padding-left: 1rem;
-  border-left: 2px solid rgba(249, 115, 22, 0.5);
+  border-left: 2px solid rgba(255, 140, 66, 0.5);
   color: rgba(255, 255, 255, 0.75);
 }
 

@@ -75,7 +75,7 @@ export default function ProjectPage() {
 						</Link>
 						<Link
 							to='/'
-							className='inline-flex items-center justify-center rounded-full bg-orange-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-orange-600'
+							className='inline-flex items-center justify-center rounded-full bg-[#ff8c42] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#ff8c42]'
 						>
 							Go home
 						</Link>
@@ -102,7 +102,7 @@ export default function ProjectPage() {
 						<div className='flex items-center justify-between gap-4'>
 							<Link
 								to='/projects'
-								className='text-xs tracking-widest text-white/70 hover:text-orange-500'
+								className='text-xs tracking-widest text-white/70 hover:text-[#ff8c42]'
 							>
 								← BACK TO PROJECTS
 							</Link>
@@ -110,7 +110,7 @@ export default function ProjectPage() {
 
 						<div className='inline-flex items-center gap-4 font-["JetBrains_Mono",monospace] text-xs tracking-[0.3em] text-[#ff8c42]'>
 							<span className='h-0.5 w-12 bg-[#ff8c42]' />
-							<span className='text-orange-500/80'>PROJECT</span>
+							<span className='text-[#ff8c42]/80'>PROJECT</span>
 						</div>
 
 						<div className='space-y-3'>
@@ -142,7 +142,7 @@ export default function ProjectPage() {
 										<Link
 											key={kind}
 											to={href}
-											className='text-white/80 underline underline-offset-4 hover:text-orange-500'
+											className='text-white/80 underline underline-offset-4 hover:text-[#ff8c42]'
 										>
 											{label}
 										</Link>
@@ -152,7 +152,7 @@ export default function ProjectPage() {
 											href={href}
 											target='_blank'
 											rel='noreferrer'
-											className='text-white/80 underline underline-offset-4 hover:text-orange-500'
+											className='text-white/80 underline underline-offset-4 hover:text-[#ff8c42]'
 										>
 											{label}
 										</a>
@@ -161,7 +161,7 @@ export default function ProjectPage() {
 							</div>
 						) : null}
 
-						<div className='rounded-2xl border border-orange-500/15 bg-neutral-900/40 p-6 ring-1 ring-orange-500/10'>
+						<div className='rounded-2xl border border-[#ff8c42]/15 bg-neutral-900/40 p-6 ring-1 ring-[#ff8c42]/10'>
 							<TableOfContents sections={tocSections} />
 						</div>
 					</div>
@@ -173,7 +173,7 @@ export default function ProjectPage() {
 							<section id='overview' className='scroll-mt-24'>
 								<h2 className='bbh-bartle-regular flex items-center gap-3 text-xl font-semibold tracking-tight text-white sm:text-2xl'>
 									<span
-										className='h-px w-8 bg-orange-500/60'
+										className='h-px w-8 bg-[#ff8c42]/60'
 										aria-hidden='true'
 									/>
 									<span>Overview</span>
@@ -189,7 +189,7 @@ export default function ProjectPage() {
 								<section id='problem' className='scroll-mt-24'>
 									<h2 className='bbh-bartle-regular flex items-center gap-3 text-xl font-semibold tracking-tight text-white sm:text-2xl'>
 										<span
-											className='h-px w-8 bg-orange-500/60'
+											className='h-px w-8 bg-[#ff8c42]/60'
 											aria-hidden='true'
 										/>
 										<span>Problem</span>
@@ -202,7 +202,7 @@ export default function ProjectPage() {
 								<section id='approach' className='scroll-mt-24'>
 									<h2 className='bbh-bartle-regular flex items-center gap-3 text-xl font-semibold tracking-tight text-white sm:text-2xl'>
 										<span
-											className='h-px w-8 bg-orange-500/60'
+											className='h-px w-8 bg-[#ff8c42]/60'
 											aria-hidden='true'
 										/>
 										<span>Approach</span>
@@ -214,9 +214,9 @@ export default function ProjectPage() {
 							{caseStudy?.highlights?.length ? (
 								<section
 									id='highlights'
-									className='scroll-mt-24 rounded-2xl border border-orange-500/15 bg-neutral-900/40 p-6 ring-1 ring-orange-500/10'
+									className='scroll-mt-24 rounded-2xl border border-[#ff8c42]/15 bg-neutral-900/40 p-6 ring-1 ring-[#ff8c42]/10'
 								>
-									<h2 className='text-sm font-semibold tracking-widest text-orange-500/80'>
+									<h2 className='text-sm font-semibold tracking-widest text-[#ff8c42]/80'>
 										HIGHLIGHTS
 									</h2>
 									<ul className='mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-white/70'>
@@ -231,7 +231,7 @@ export default function ProjectPage() {
 								<section id='learnings' className='scroll-mt-24'>
 									<h2 className='bbh-bartle-regular flex items-center gap-3 text-xl font-semibold tracking-tight text-white sm:text-2xl'>
 										<span
-											className='h-px w-8 bg-orange-500/60'
+											className='h-px w-8 bg-[#ff8c42]/60'
 											aria-hidden='true'
 										/>
 										<span>Learnings</span>
@@ -248,7 +248,7 @@ export default function ProjectPage() {
 								<section id='next-steps' className='scroll-mt-24'>
 									<h2 className='bbh-bartle-regular flex items-center gap-3 text-xl font-semibold tracking-tight text-white sm:text-2xl'>
 										<span
-											className='h-px w-8 bg-orange-500/60'
+											className='h-px w-8 bg-[#ff8c42]/60'
 											aria-hidden='true'
 										/>
 										<span>Next steps</span>
@@ -264,7 +264,7 @@ export default function ProjectPage() {
 							<section id='tech-stack' className='scroll-mt-24'>
 								<h2 className='bbh-bartle-regular flex items-center gap-3 text-xl font-semibold tracking-tight text-white sm:text-2xl'>
 									<span
-										className='h-px w-8 bg-orange-500/60'
+										className='h-px w-8 bg-[#ff8c42]/60'
 										aria-hidden='true'
 									/>
 									<span>Tech stack</span>

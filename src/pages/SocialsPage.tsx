@@ -160,12 +160,12 @@ export default function SocialsPage() {
 								href={link.href}
 								target={link.href.startsWith("http") ? "_blank" : undefined}
 								rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-								className='group flex items-center gap-3 rounded-xl border border-white/10 bg-neutral-950/20 px-4 py-4 transition hover:border-orange-500/40 hover:text-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/30'
+								className='group flex items-center gap-3 rounded-xl border border-white/10 bg-neutral-950/20 px-4 py-4 transition hover:border-[#ff8c42]/40 hover:text-[#ff8c42] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff8c42]/30'
 							>
-								<span className='text-white/80 transition group-hover:text-orange-500'>
+								<span className='text-white/80 transition group-hover:text-[#ff8c42]'>
 									{link.icon}
 								</span>
-								<span className='text-sm font-medium text-white/80 transition group-hover:text-orange-500'>
+								<span className='text-sm font-medium text-white/80 transition group-hover:text-[#ff8c42]'>
 									{link.label}
 								</span>
 							</a>
