@@ -43,10 +43,10 @@ export default function NotFoundPage() {
 						Go Home
 					</Link>
 					<Link
-						to='/socials'
+						to='/contacts'
 						className='inline-flex items-center justify-center rounded-md border border-white/20 px-6 py-3 font-["Inter",sans-serif] text-sm font-semibold text-white transition-colors hover:border-[#ff8c42]/60 hover:bg-[#ff8c42]/10 hover:text-[#ff8c42]'
 					>
-						Contact
+						Contacts
 					</Link>
 				</div>
 			</main>

@@ -62,11 +62,11 @@ export default function FeaturedProjectCard({ project }: Props) {
 					</div>
 				</div>
 
-				<div className='hidden lg:block overflow-hidden rounded-2xl'>
-					<div className='w-full overflow-hidden'>
+				<div className='hidden lg:block rounded-2xl'>
+					<div className='w-full'>
 						<div
-							className='relative h-auto w-full overflow-hidden'
-							style={{ aspectRatio: "16 / 9" }}
+							className='relative h-auto w-full'
+							style={{ aspectRatio: "16 / 10" }}
 						>
 							<div className='pointer-events-none absolute left-1/2 top-0 h-225 w-360 origin-top -translate-x-1/2 scale-50'>
 								<iframe

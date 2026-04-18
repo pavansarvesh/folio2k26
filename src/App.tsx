@@ -1,6 +1,6 @@
 import "./App.css";
 import { lazy, Suspense } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import LoadingScreen from "./components/LoadingScreen";
 import ScrollToHash from "./components/ScrollToHash";
 
@@ -27,7 +27,11 @@ function App() {
 					<Route path='/projects/:slug' element={<ProjectPage />} />
 					<Route path='/blogs' element={<BlogsPage />} />
 					<Route path='/blogs/:slug' element={<BlogPostPage />} />
-					<Route path='/socials' element={<SocialsPage />} />
+					<Route path='/contacts' element={<SocialsPage />} />
+					<Route
+						path='/socials'
+						element={<Navigate to='/contacts' replace />}
+					/>
 					<Route path='*' element={<NotFoundPage />} />
 				</Routes>
 			</Suspense>

@@ -32,13 +32,13 @@ export default function Footer() {
 								to='/projects'
 								className='whitespace-nowrap text-white/70 underline-offset-4 hover:text-[#ff8c42] hover:underline'
 							>
-								Projects
+								Work
 							</Link>
 							<Link
-								to='/socials'
+								to='/contacts'
 								className='whitespace-nowrap text-white/70 underline-offset-4 hover:text-[#ff8c42] hover:underline'
 							>
-								Socials
+								Contacts
 							</Link>
 							<a
 								href='#top'

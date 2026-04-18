@@ -72,10 +72,13 @@ const HomePage = () => {
 				</section>
 
 				<section className='mx-auto w-full max-w-400 px-8 py-10 lg:px-16'>
-					<div className='mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between'>
+					<div
+						className='mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between'
+						id='featuredProjects'
+					>
 						<div className='min-w-0'>
 							<h2 className='bbh-bartle-regular text-xl font-semibold tracking-tight text-white sm:text-3xl'>
-								Featured Projects
+								Featured Work
 							</h2>
 						</div>
 

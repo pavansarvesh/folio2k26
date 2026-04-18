@@ -67,10 +67,16 @@ const Navbar = () => {
 						About
 					</NavLink>
 					<NavLink
-						to='/socials'
+						to='/blogs'
 						className={(props) => `nav-anim ${desktopLinkClass(props)}`}
 					>
-						Contact
+						Blogs
+					</NavLink>
+					<NavLink
+						to='/contacts'
+						className={(props) => `nav-anim ${desktopLinkClass(props)}`}
+					>
+						Contacts
 					</NavLink>
 					<NavLink
 						to='/resume'
@@ -117,11 +123,18 @@ const Navbar = () => {
 							About
 						</NavLink>
 						<NavLink
-							to='/socials'
+							to='/blogs'
 							className={mobileLinkClass}
 							onClick={() => setMobileMenuOpen(false)}
 						>
-							Contact
+							Blogs
+						</NavLink>
+						<NavLink
+							to='/contacts'
+							className={mobileLinkClass}
+							onClick={() => setMobileMenuOpen(false)}
+						>
+							Contacts
 						</NavLink>
 						<NavLink
 							to='/resume'

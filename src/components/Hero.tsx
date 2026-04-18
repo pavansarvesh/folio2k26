@@ -133,7 +133,7 @@ const Hero = () => {
 							</p>
 							<div className='mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4'>
 								<Link
-									to='/projects'
+									to='#featuredProjects'
 									className='hero-btn group inline-flex w-full items-center justify-center gap-3 rounded-md border border-[#ff8c42] bg-[#ff8c42] px-6 py-3 font-["Inter",sans-serif] text-sm font-semibold text-black transition-colors duration-200 hover:bg-white hover:text-black sm:w-auto sm:px-7 sm:py-3.5 sm:text-base'
 								>
 									<span>View Work</span>
@@ -142,10 +142,10 @@ const Hero = () => {
 									</span>
 								</Link>
 								<Link
-									to='/socials'
+									to='/contacts'
 									className='hero-btn inline-flex w-full items-center justify-center rounded-md border border-white/20 px-6 py-3 font-["Inter",sans-serif] text-sm font-semibold text-white transition-colors duration-200 hover:border-[#ff8c42]/60 hover:bg-[#ff8c42]/10 hover:text-[#ff8c42] sm:w-auto sm:px-7 sm:py-3.5 sm:text-base'
 								>
-									Contact
+									Contacts
 								</Link>
 							</div>
 						</div>
