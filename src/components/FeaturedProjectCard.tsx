@@ -62,7 +62,7 @@ export default function FeaturedProjectCard({ project }: Props) {
 					</div>
 				</div>
 
-				<div className='overflow-hidden rounded-2xl'>
+				<div className='hidden lg:block overflow-hidden rounded-2xl'>
 					<div className='w-full overflow-hidden'>
 						<div
 							className='relative h-auto w-full overflow-hidden'
