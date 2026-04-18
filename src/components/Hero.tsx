@@ -101,8 +101,8 @@ const Hero = () => {
 			className='relative min-h-screen overflow-hidden border-b border-white/5 bg-[#0d0d0d]'
 		>
 			<div className='pointer-events-none absolute inset-0'>
-				<div className='hero-orbit-a absolute -right-24 top-8 h-125 w-125 rounded-full border border-[#ff8c42]/15 sm:h-170 sm:w-170' />
-				<div className='hero-orbit-b absolute -left-10 bottom-10 h-55 w-55 rounded-full border border-[#ff8c42]/12 sm:h-90 sm:w-90' />
+				<div className='hero-orbit-a absolute -right-24 top-8 h-125 w-125 rounded-full border border-[#ff8c42]/22 sm:h-170 sm:w-170' />
+				<div className='hero-orbit-b absolute -left-10 bottom-10 h-55 w-55 rounded-full border border-[#ff8c42]/18 sm:h-90 sm:w-90' />
 			</div>
 
 			<div className='relative mx-auto flex min-h-screen w-full max-w-450 flex-col px-6 pb-16 pt-28 sm:px-8 sm:pt-36 lg:px-16 lg:pt-48'>
