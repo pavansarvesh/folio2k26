@@ -8,9 +8,6 @@ type Props = {
 export default function FeaturedProjectCard({ project }: Props) {
 	const demoHref = project.links.demo;
 	const eyebrow = project.tech.slice(0, 2).join(" / ").toUpperCase();
-	const displayUrl = demoHref
-		? demoHref.replace(/^https?:\/\//, "").replace(/\/$/, "")
-		: `${project.slug}.demo`;
 	const previewHref = demoHref || "/";
 
 	return (
