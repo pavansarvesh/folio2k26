@@ -8,19 +8,9 @@ import { getOnChainResumeHash } from "../lib/getResumeHash";
 import type { OnChainResumeHashResult } from "../lib/getResumeHash";
 import { RESUME_CONTRACT_ADDRESS } from "../lib/resumeContract";
 
-/**
- * Resume page
- *
- * Recent UX changes:
- * - No auto-download on page load (auto-downloads feel sketchy and many browsers block them).
- * - Fill the header gap with a short "How it works" + "Steps" section so users understand
- *   the verification flow before uploading anything.
- */
-
-const RESUME_RESUME_PATH = "/Pavan-Resume-mar-23-update.pdf";
+const RESUME_PATH = "/Pavan-Resume-mar-23-update.pdf";
 
 const ResumePage = () => {
-	// Memoized label to keep the render stable and avoid sprinkling the constant everywhere.
 	const [onChainData, setOnChainData] =
 		useState<OnChainResumeHashResult | null>(null);
 	const [onChainLoading, setOnChainLoading] = useState(true);
@@ -62,7 +52,7 @@ const ResumePage = () => {
 		if (onChainError) return "On-chain update unavailable";
 		if (!onChainData) return "On-chain update unavailable";
 		return `Resume updated on-chain: ${formatOnChainDate(
-			onChainData.date
+			onChainData.date,
 		)} (block ${onChainData.blockNumber.toString()})`;
 	}, [onChainData, onChainError, onChainLoading]);
 
@@ -79,9 +69,9 @@ const ResumePage = () => {
 	return (
 		<div className='min-h-screen bg-neutral-950 text-white'>
 			<Navbar />
-			<main className='mx-auto w-full max-w-6xl px-6 py-12 sm:py-16 lg:py-20'>
-				<div className='inline-flex items-center gap-3 text-xs tracking-widest text-white/70'>
-					<span className='h-px w-10 bg-orange-500/60' />
+			<main className='mx-auto w-full max-w-400 px-8 pb-16 pt-32 lg:px-16'>
+				<div className='inline-flex items-center gap-4 font-["JetBrains_Mono",monospace] text-xs tracking-[0.3em] text-[#ff8c42]'>
+					<span className='h-0.5 w-12 bg-[#ff8c42]' />
 					<span>RESUME</span>
 				</div>
 
@@ -146,14 +136,14 @@ const ResumePage = () => {
 
 							<div className='mt-5 flex flex-col gap-3 sm:flex-row sm:items-center'>
 								<a
-									href={RESUME_RESUME_PATH}
+									href={RESUME_PATH}
 									download
 									className='inline-flex w-full items-center justify-center rounded-full bg-orange-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-orange-600 sm:w-auto'
 								>
 									Download Resume
 								</a>
 								<a
-									href={RESUME_RESUME_PATH}
+									href={RESUME_PATH}
 									target='_blank'
 									rel='noreferrer'
 									className='inline-flex w-full items-center justify-center rounded-full bg-white/10 px-5 py-2.5 text-sm font-medium text-white hover:bg-white/15 sm:w-auto'

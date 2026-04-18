@@ -5,7 +5,7 @@ export default function Footer() {
 
 	return (
 		<footer className='border-t border-white/10'>
-			<div className='mx-auto max-w-6xl px-6 py-8 text-sm max-[639px]:py-5 max-[639px]:text-[10px]'>
+			<div className='mx-auto max-w-400 px-8 py-8 text-sm lg:px-16 max-[639px]:py-5 max-[639px]:text-[10px]'>
 				<div className='flex flex-col gap-4 max-[639px]:gap-3'>
 					<div className='flex flex-row items-center justify-between gap-4 max-[639px]:flex-col max-[639px]:items-start max-[639px]:gap-3'>
 						<div className='text-white/70'>
@@ -49,7 +49,7 @@ export default function Footer() {
 						</div>
 					</div>
 
-					<div className='flex items-center gap-4 text-[11px] uppercase tracking-widest text-white/60 max-[639px]:w-full max-[639px]:justify-between max-[639px]:text-[10px]'>
+					<div className='flex items-center gap-4 font-["JetBrains_Mono",monospace] text-[11px] uppercase tracking-widest text-white/60 max-[639px]:w-full max-[639px]:justify-between max-[639px]:text-[10px]'>
 						<div className='flex flex-wrap items-center gap-x-3 gap-y-2 max-[639px]:flex-1 max-[639px]:justify-between max-[639px]:gap-3 max-[639px]:whitespace-nowrap'>
 							<a
 								href='https://amrita.town'

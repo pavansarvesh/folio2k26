@@ -119,9 +119,9 @@ const BlogPostPage = () => {
 				</div>
 
 				<Navbar />
-				<main className='blog-shell relative mx-auto max-w-3xl px-6 py-12 sm:py-16'>
-					<div className='inline-flex items-center gap-3 text-xs tracking-widest text-white/70'>
-						<span className='h-px w-10 bg-orange-500/60' />
+				<main className='blog-shell relative mx-auto max-w-400 px-8 pb-16 pt-32 lg:px-16'>
+					<div className='inline-flex items-center gap-4 font-["JetBrains_Mono",monospace] text-xs tracking-[0.3em] text-[#ff8c42]'>
+						<span className='h-0.5 w-12 bg-[#ff8c42]' />
 						<span>BLOG</span>
 					</div>
 
@@ -170,7 +170,7 @@ const BlogPostPage = () => {
 
 			<main className='relative'>
 				<div className='blog-shell'>
-					<header className='mx-auto max-w-6xl px-6 pb-6 pt-10 sm:pb-8 sm:pt-14'>
+					<header className='mx-auto max-w-400 px-8 pb-6 pt-32 lg:px-16'>
 						<div className='flex flex-col gap-6'>
 							<div className='flex items-center justify-between gap-4'>
 								<Link
@@ -181,13 +181,13 @@ const BlogPostPage = () => {
 								</Link>
 							</div>
 
-							<div className='inline-flex items-center gap-3 text-xs tracking-widest text-white/70'>
-								<span className='h-px w-10 bg-orange-500/60' />
+							<div className='inline-flex items-center gap-4 font-["JetBrains_Mono",monospace] text-xs tracking-[0.3em] text-[#ff8c42]'>
+								<span className='h-0.5 w-12 bg-[#ff8c42]' />
 								<span className='text-orange-500/80'>BLOG</span>
 							</div>
 
 							<div className='space-y-3'>
-								<h1 className='RobotoMono text-4xl font-medium leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl'>
+								<h1 className='bbh-bartle-regular text-4xl font-medium leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-7xl'>
 									{blog.title}
 								</h1>
 
@@ -221,7 +221,7 @@ const BlogPostPage = () => {
 						</div>
 					</header>
 
-					<section className='mx-auto max-w-6xl px-6 pb-14 sm:pb-16'>
+					<section className='mx-auto max-w-400 px-8 pb-14 lg:px-16 sm:pb-16'>
 						<div className='grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start'>
 							<article className='min-w-0 border-t border-white/10 pt-8'>
 								<div

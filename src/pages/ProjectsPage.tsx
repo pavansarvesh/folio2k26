@@ -11,13 +11,13 @@ export default function ProjectsPage() {
 			<Navbar />
 
 			<main className='relative'>
-				<section className='mx-auto max-w-5xl px-6 py-12 sm:py-16 lg:max-w-6xl lg:py-20'>
-					<div className='inline-flex items-center gap-3 text-xs tracking-widest text-white/70'>
-						<span className='h-px w-10 bg-orange-500/60' />
+				<section className='mx-auto max-w-400 px-8 pb-16 pt-32 lg:px-16'>
+					<div className='inline-flex items-center gap-4 font-["JetBrains_Mono",monospace] text-xs tracking-[0.3em] text-[#ff8c42]'>
+						<span className='h-0.5 w-12 bg-[#ff8c42]' />
 						<span>PROJECTS</span>
 					</div>
 
-					<h1 className='bbh-bartle-regular mt-6 max-w-5xl break-words text-3xl font-medium leading-[1.02] tracking-tight text-white sm:text-4xl lg:text-5xl'>
+					<h1 className='bbh-bartle-regular mt-6 max-w-5xl wrap-break-word text-3xl font-medium leading-[1.02] tracking-tight text-white sm:text-4xl lg:text-5xl'>
 						Projects
 					</h1>
 

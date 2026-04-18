@@ -12,7 +12,6 @@ const HomePage = () => {
 	const featuredProjects = projects
 		.filter((project) => project.featured)
 		.slice(0, 3);
-	// console.log(featuredProjects)
 
 	return (
 		<div
@@ -28,7 +27,7 @@ const HomePage = () => {
 				</div>
 				<About showKnowMore />
 
-				<section className='mx-auto w-full max-w-6xl px-6 py-8 sm:py-12'>
+				<section className='mx-auto w-full max-w-400 px-8 py-10 lg:px-16'>
 					<div className='mb-5'>
 						<h2 className='bbh-bartle-regular text-xl font-semibold tracking-tight text-white sm:text-3xl'>
 							Live Stats
@@ -72,13 +71,12 @@ const HomePage = () => {
 					</div>
 				</section>
 
-				<section className='mx-auto w-full max-w-6xl px-6 py-8 sm:py-12'>
+				<section className='mx-auto w-full max-w-400 px-8 py-10 lg:px-16'>
 					<div className='mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between'>
 						<div className='min-w-0'>
 							<h2 className='bbh-bartle-regular text-xl font-semibold tracking-tight text-white sm:text-3xl'>
 								Featured Projects
 							</h2>
-							{/* <p className="mt-1 text-sm text-white/60">My top projects</p> */}
 						</div>
 
 						<a

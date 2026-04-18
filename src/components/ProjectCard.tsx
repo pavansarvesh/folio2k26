@@ -10,9 +10,9 @@ export function ProjectCard({
 	links,
 }: Project) {
 	return (
-		<div className='rounded-xl border border-white/10 bg-neutral-900 p-4 transition duration-300 hover:-translate-y-1 hover:border-white/20 sm:p-6'>
+		<div className='rounded-2xl border border-white/10 bg-neutral-900/45 p-4 transition duration-300 hover:-translate-y-1 hover:border-[#ff8c42]/40 sm:p-6'>
 			<Link to={`/projects/${slug}`}>
-				<h3 className='text-lg font-semibold text-orange-500 hover:underline sm:text-xl'>
+				<h3 className='bbh-bartle-regular text-lg font-semibold text-[#ff8c42] hover:underline sm:text-2xl'>
 					{title}
 				</h3>
 			</Link>

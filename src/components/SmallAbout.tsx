@@ -8,10 +8,10 @@ const SmallAbout = ({ showKnowMore = false }: SmallAboutProps) => {
 	return (
 		<section
 			id='about'
-			className='relative mx-auto mt-2 flex max-w-6xl flex-col px-6 pt-12 pb-8 sm:mt-4 sm:pt-20 sm:pb-12'
+			className='relative mx-auto mt-2 flex max-w-400 flex-col px-8 pb-10 pt-14 lg:px-16'
 		>
-			<div className='inline-flex items-center gap-3 text-xs tracking-widest text-white/70'>
-				<span className='h-px w-10 bg-orange-500/60' />
+			<div className='inline-flex items-center gap-4 font-["JetBrains_Mono",monospace] text-xs tracking-[0.3em] text-[#ff8c42]'>
+				<span className='h-0.5 w-12 bg-[#ff8c42]' />
 				<span>ABOUT</span>
 			</div>
 
@@ -19,7 +19,7 @@ const SmallAbout = ({ showKnowMore = false }: SmallAboutProps) => {
 				ABOUT
 			</h2>
 
-			<p className='mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:mt-6 sm:text-lg'>
+			<p className='mt-5 max-w-2xl text-base leading-8 text-white/70 sm:mt-6 sm:text-lg'>
 				I’m an Electronics and Computer Engineering student passionate about
 				Web3 and blockchain. My main focus is backend and smart contract
 				development, with a strong interest in building complete DApps
@@ -29,9 +29,9 @@ const SmallAbout = ({ showKnowMore = false }: SmallAboutProps) => {
 			{showKnowMore ? (
 				<Link
 					to='/about'
-					className='mt-6 inline-flex w-fit text-sm text-white/70 transition-colors duration-200 ease-out hover:text-orange-500 sm:mt-8'
+					className='mt-7 inline-flex w-fit items-center gap-2 text-sm text-white/70 transition-colors duration-200 ease-out hover:text-[#ff8c42] sm:mt-8'
 				>
-					(know more)
+					Know more {"->"}
 				</Link>
 			) : null}
 		</section>

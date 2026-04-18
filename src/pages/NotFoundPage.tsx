@@ -6,44 +6,47 @@ export default function NotFoundPage() {
 	return (
 		<div
 			id='top'
-			className='relative min-h-screen overflow-hidden bg-neutral-950 text-white'
+			className='relative min-h-screen overflow-hidden bg-[#0d0d0d] text-white'
 		>
-			{/* background */}
 			<div className='pointer-events-none absolute inset-0'>
-				<div className='absolute inset-0 bg-neutral-950' />
-				<div className='absolute inset-0 hidden opacity-95 [background-image:radial-gradient(rgba(255,255,255,0.22)_1px,transparent_1px)] [background-size:18px_18px] sm:block' />
-				<div className='absolute inset-0 bg-gradient-to-b from-transparent via-neutral-950/10 to-neutral-950/35' />
+				<div className='absolute -right-24 top-10 h-110 w-110 rounded-full border border-[#ff8c42]/12 sm:h-150 sm:w-150' />
+				<div className='absolute -left-12 bottom-10 h-55 w-55 rounded-full border border-[#ff8c42]/10 sm:h-90 sm:w-90' />
+				<div className='absolute left-[48%] top-[35%] h-2.5 w-2.5 rounded-full bg-[#ff8c42]' />
 			</div>
 
 			<Navbar />
 
-			<main className='relative mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-center px-6 py-16 sm:py-20'>
-				<div className='inline-flex items-center gap-3 text-xs tracking-widest text-white/70'>
-					<span className='h-[1px] w-10 bg-orange-500/60' />
-					<span>404</span>
+			<main className='relative mx-auto flex min-h-[85vh] max-w-400 flex-col justify-center px-8 pb-16 pt-32 lg:px-16'>
+				<div className='inline-flex items-center gap-4 font-["JetBrains_Mono",monospace] text-xs tracking-[0.3em] text-[#ff8c42]'>
+					<span className='h-0.5 w-12 bg-[#ff8c42]' />
+					<span>PAGE NOT FOUND</span>
 				</div>
 
-				<h1 className='bbh-bartle-regular mt-6 max-w-5xl text-5xl font-medium leading-[1.02] tracking-tight text-white sm:text-7xl'>
-					Page not found
-				</h1>
+				<div className='mt-8 font-["Playfair_Display",serif] text-[clamp(4.2rem,12vw,12rem)] font-black uppercase leading-[0.85] tracking-tight text-white'>
+					<div className='relative inline-block'>
+						404
+						<span className='absolute -right-3 top-[28%] h-2.5 w-2.5 rounded-full bg-[#ff8c42]' />
+					</div>
+					<div className='sm:ml-20'>MISSING</div>
+				</div>
 
-				<p className='mt-6 max-w-2xl text-base leading-7 text-white/70 sm:text-lg'>
-					The page you’re looking for doesn’t exist or the link is wrong or I am
-					still working on it.
+				<p className='mt-6 max-w-xl font-["Inter",sans-serif] text-base leading-8 text-white/70 sm:text-lg'>
+					This page is out of bounds. Let’s get you back to the main build and
+					keep exploring.
 				</p>
 
-				<div className='mt-10 flex items-center gap-3'>
+				<div className='mt-10 flex flex-wrap items-center gap-3'>
 					<Link
 						to='/'
-						className='inline-flex items-center justify-center rounded-full bg-orange-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-orange-600'
+						className='inline-flex items-center justify-center rounded-md border border-[#ff8c42] bg-[#ff8c42] px-6 py-3 font-["Inter",sans-serif] text-sm font-semibold text-black transition-colors hover:bg-white'
 					>
-						GO HOME
+						Go Home
 					</Link>
 					<Link
-						to='/connect'
-						className='inline-flex items-center justify-center rounded-full bg-white/10 px-5 py-2.5 text-sm font-medium text-white hover:bg-white/15'
+						to='/socials'
+						className='inline-flex items-center justify-center rounded-md border border-white/20 px-6 py-3 font-["Inter",sans-serif] text-sm font-semibold text-white transition-colors hover:border-[#ff8c42]/60 hover:bg-[#ff8c42]/10 hover:text-[#ff8c42]'
 					>
-						CONNECT
+						Contact
 					</Link>
 				</div>
 			</main>

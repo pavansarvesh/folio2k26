@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:wght@900&family=Space+Grotesk:wght@500;600;700;800&display=swap");
 @import "tailwindcss";
 
 html {
@@ -6,16 +7,12 @@ html {
 }
 
 :root {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Inter", sans-serif;
   @apply bg-neutral-950 text-white;
 }
 
 body {
   font-family: inherit;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 @media (max-width: 420px) {

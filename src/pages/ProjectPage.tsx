@@ -14,14 +14,14 @@ export default function ProjectPage() {
 		description && description.length > 0
 			? description
 			: caseStudy?.overview?.trim() ||
-			  "A short case study on the goals, decisions, and outcomes behind this project.";
+				"A short case study on the goals, decisions, and outcomes behind this project.";
 
 	const linkEntries = project
 		? (
 				Object.entries(project.links) as Array<
 					["github" | "demo" | "caseStudy", string | undefined]
 				>
-		  ).filter(([, href]) => Boolean(href))
+			).filter(([, href]) => Boolean(href))
 		: [];
 
 	const tocSections = [
@@ -52,9 +52,9 @@ export default function ProjectPage() {
 			>
 				<Navbar />
 
-				<main className='relative mx-auto max-w-6xl px-6 py-16 sm:py-20'>
-					<div className='inline-flex items-center gap-3 text-xs tracking-widest text-white/70'>
-						<span className='h-px w-10 bg-orange-500/60' />
+				<main className='relative mx-auto max-w-400 px-8 pb-16 pt-32 lg:px-16'>
+					<div className='inline-flex items-center gap-4 font-["JetBrains_Mono",monospace] text-xs tracking-[0.3em] text-[#ff8c42]'>
+						<span className='h-0.5 w-12 bg-[#ff8c42]' />
 						<span>PROJECT</span>
 					</div>
 
@@ -97,7 +97,7 @@ export default function ProjectPage() {
 			<Navbar />
 
 			<main className='relative'>
-				<header className='mx-auto max-w-3xl px-6 pb-8 pt-14 sm:pt-16'>
+				<header className='mx-auto max-w-400 px-8 pb-8 pt-32 lg:px-16'>
 					<div className='flex flex-col gap-6'>
 						<div className='flex items-center justify-between gap-4'>
 							<Link
@@ -108,8 +108,8 @@ export default function ProjectPage() {
 							</Link>
 						</div>
 
-						<div className='inline-flex items-center gap-3 text-xs tracking-widest text-white/70'>
-							<span className='h-px w-10 bg-orange-500/60' />
+						<div className='inline-flex items-center gap-4 font-["JetBrains_Mono",monospace] text-xs tracking-[0.3em] text-[#ff8c42]'>
+							<span className='h-0.5 w-12 bg-[#ff8c42]' />
 							<span className='text-orange-500/80'>PROJECT</span>
 						</div>
 
@@ -133,8 +133,8 @@ export default function ProjectPage() {
 										kind === "github"
 											? "GitHub"
 											: kind === "demo"
-											? "Live demo"
-											: "Case study";
+												? "Live demo"
+												: "Case study";
 									const isInternal = Boolean(href && href.startsWith("/"));
 
 									if (!href) return null;
@@ -167,7 +167,7 @@ export default function ProjectPage() {
 					</div>
 				</header>
 
-				<section className='mx-auto max-w-3xl px-6 pb-16 sm:pb-20'>
+				<section className='mx-auto max-w-400 px-8 pb-16 lg:px-16 sm:pb-20'>
 					<article className='border-t border-white/10 pt-10'>
 						<div className='space-y-10 text-white/70'>
 							<section id='overview' className='scroll-mt-24'>

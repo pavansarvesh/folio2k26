@@ -20,7 +20,7 @@ export default function BlogCard({ blog }: Props) {
 	const slug = blog.slug ?? slugify(blog.title);
 
 	return (
-		<article className='rounded-xl border border-white/10 bg-neutral-900 p-5 transition duration-300 hover:-translate-y-1 hover:border-orange-500/30 sm:p-6'>
+		<article className='rounded-2xl border border-white/10 bg-neutral-900/45 p-5 transition duration-300 hover:-translate-y-1 hover:border-[#ff8c42]/35 sm:p-6'>
 			<div className='flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-white/60'>
 				<span className='text-white/70'>{formatDate(blog.date)}</span>
 				{blog.tags?.length ? (
@@ -39,7 +39,7 @@ export default function BlogCard({ blog }: Props) {
 				) : null}
 			</div>
 
-			<h3 className='mt-3 text-base font-semibold text-orange-500 sm:text-xl'>
+			<h3 className='bbh-bartle-regular mt-3 text-base font-semibold text-[#ff8c42] sm:text-2xl'>
 				<Link
 					to={`/blogs/${slug}`}
 					className='underline-offset-4 hover:underline'

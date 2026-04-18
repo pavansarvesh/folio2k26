@@ -6,26 +6,9 @@ import { education } from "../data/education";
 import { experiences } from "../data/experience";
 import TableOfContents from "../components/TableOfContents";
 
-// const CERTIFICATIONS: Array<{
-//   title: string
-//   date: string
-//   meta?: string
-//   href?: string
-// }> = [
-//   {
-//     title: "Workshop On Cyber Security And Hacking",
-//     date: "Nov 2023",
-//   },
-//   {
-//     title: "Python (Basic) Certificate",
-//     date: "Jun 2023",
-//     meta: "Certificate ID 927101ACD6AD",
-//   },
-// ]
-
 const AboutPage = () => {
 	const toolGroups = Array.from(
-		new Map(tools.map((group) => [group.id, group])).values()
+		new Map(tools.map((group) => [group.id, group])).values(),
 	);
 
 	const renderTextWithLinks = (text: string) => {
@@ -90,12 +73,12 @@ const AboutPage = () => {
 	return (
 		<div className='min-h-screen bg-neutral-950 text-white'>
 			<Navbar />
-			<main className='mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:max-w-7xl lg:py-20'>
+			<main className='mx-auto max-w-400 px-8 pb-16 pt-32 lg:px-16'>
 				<div className='grid gap-10 md:grid-cols-12 md:items-start'>
 					<div className='md:col-span-9'>
 						<section id='introduction' className='scroll-mt-24'>
-							<div className='inline-flex items-center gap-3 text-xs tracking-widest text-white/70'>
-								<span className='h-px w-10 bg-orange-500/60' />
+							<div className='inline-flex items-center gap-4 font-["JetBrains_Mono",monospace] text-xs tracking-[0.3em] text-[#ff8c42]'>
+								<span className='h-0.5 w-12 bg-[#ff8c42]' />
 								<span>ABOUT</span>
 							</div>
 
@@ -214,7 +197,7 @@ const AboutPage = () => {
 						</section>
 						<section className='mt-10 scroll-mt-24 sm:mt-12' id='toolkit'>
 							<h2 className='text-sm font-medium tracking-widest text-orange-500/80'>
-								MY TOOlKIT
+								MY TOOLKIT
 							</h2>
 
 							<div className='mt-4 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5'>
