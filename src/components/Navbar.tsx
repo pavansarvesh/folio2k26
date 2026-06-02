@@ -45,7 +45,7 @@ const Navbar = () => {
 			ref={rootRef}
 			className='fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#0d0d0d]/80 backdrop-blur-xl'
 		>
-			<div className='relative mx-auto flex w-full max-w-400 items-center justify-between px-8 py-6 lg:px-0'>
+			<div className='relative mx-auto flex w-full max-w-400 items-center justify-between px-8 py-6 '>
 				<a href='/'>
 					<div className="nav-anim font-['Playfair_Display',serif] text-3xl font-black leading-none tracking-tight text-white">
 						PS

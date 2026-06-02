@@ -1,12 +1,5 @@
 [
   {
-    "title": "The Art of Web Development",
-    "description": "This is where it Starts",
-    "date": "2025-01-26",
-    "body": "<h2>The Art of Web Development 🎨</h2>\n<p>Web development is not just about writing code; it's about <strong>crafting experiences</strong>. Whether you're building a personal blog or a complex e-commerce platform, every line of code contributes to shaping how users interact with your creation.</p>\n<h2>🛠 The Building Blocks</h2>\n<h3>HTML: The Skeleton 🦴</h3>\n<p>HTML (<strong>HyperText Markup Language</strong>) is the backbone of any website. It provides the structure for your content. Think of it as the skeleton of a building.</p>\n<pre><code class=\"language-html\">&#x3C;!DOCTYPE html>\r\n&#x3C;html lang=\"en\">\r\n  &#x3C;head>\r\n    &#x3C;title>My First Webpage&#x3C;/title>\r\n  &#x3C;/head>\r\n  &#x3C;body>\r\n    &#x3C;h1>Welcome to Web Development&#x3C;/h1>\r\n    &#x3C;p>This is where it all begins!&#x3C;/p>\r\n  &#x3C;/body>\r\n&#x3C;/html>\n</code></pre>\n<hr>\n<h3>CSS: The Style 💅</h3>\n<p>CSS (<strong>Cascading Style Sheets</strong>) brings your website to life with colors, fonts, and layouts.</p>\n<pre><code class=\"language-CSS\">body {\r\n  font-family: Arial, sans-serif;\r\n  background-color: #f4f4f9;\r\n  color: #333;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n\r\nh1 {\r\n  color: #0056b3;\r\n  text-align: center;\r\n}\n</code></pre>\n<hr>\n<h3>JavaScript: The Brain 🧠</h3>\n<p>JavaScript adds interactivity to your site. Want a button that shows an alert? JavaScript makes it happen!</p>\n<pre><code class=\"language-JavaScript\">document.querySelector(\"button\").addEventListener(\"click\", () => {\r\n  alert(\"Hello, Web Developer!\");\r\n});\n</code></pre>\n<hr>",
-    "slug": "the-art-of-web-development"
-  },
-  {
     "title": "How DeepSeek is Shaping NVIDIA's AI Dominance",
     "description": "An analysis of how DeepSeek's advancements are shaping NVIDIA's AI hardware.",
     "date": "2025-02-09",

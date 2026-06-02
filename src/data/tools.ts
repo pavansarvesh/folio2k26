@@ -134,10 +134,10 @@ export const tools: Tools[] = [
 			},
 			{
 				id: "wsl",
-				name: "Ubuntu 24.0 LTS",
-				iconPath: "/toolsIcon/ubuntu.png",
+				name: "Fedora Linux 44",
+				iconPath: "/toolsIcon/fedora.png",
 				description: "WSL 2",
-				link: "https://ubuntu.com/desktop/wsl",
+				link: "https://docs.fedoraproject.org/en-US/cloud/wsl/",
 			},
 		],
 	},
