@@ -1,20 +1,22 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const rootRef = useRef<HTMLElement | null>(null);
+	const location = useLocation();
 
 	useLayoutEffect(() => {
-		if (!rootRef.current) {
+		if (!rootRef.current || location.pathname !== "/") {
 			return;
 		}
 
 		const ctx = gsap.context(() => {
 			gsap.fromTo(
 				".nav-anim",
-				{ opacity: 0, y: -28 },
+				{ opacity: 0, y: 0 },
 				{
 					opacity: 1,
 					y: 0,
@@ -27,7 +29,7 @@ const Navbar = () => {
 		}, rootRef);
 
 		return () => ctx.revert();
-	}, []);
+	}, [location.pathname]);
 
 	const desktopLinkClass = ({ isActive }: { isActive: boolean }) =>
 		[
