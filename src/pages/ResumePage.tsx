@@ -8,7 +8,7 @@ import { getOnChainResumeHash } from "../lib/getResumeHash";
 import type { OnChainResumeHashResult } from "../lib/getResumeHash";
 import { RESUME_CONTRACT_ADDRESS } from "../lib/resumeContract";
 
-const RESUME_PATH = "/Pavan-Resume-mar-23-update.pdf";
+const RESUME_PATH = "/Resume-7-Aug-Update.pdf";
 
 const ResumePage = () => {
 	const [onChainData, setOnChainData] =

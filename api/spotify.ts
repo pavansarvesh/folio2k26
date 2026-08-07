@@ -129,8 +129,13 @@ export default async function handler(
 			url: track.external_urls.spotify,
 		};
 		return res.status(200).json(payload);
-	} catch {
-		res.setHeader("Cache-Control", "no-store");
-		return res.status(500).json({ error: "Server Error" });
-	}
+	} catch (err) {
+    console.error(err);
+
+    res.setHeader("Cache-Control", "no-store");
+    return res.status(500).json({
+        error: "Server Error",
+        details: err instanceof Error ? err.message : String(err),
+    });
+}
 }
